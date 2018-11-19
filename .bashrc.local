@@ -1,0 +1,159 @@
+#!/usr/bin/env bash
+
+#+------------------------------------------------------------------------------------------
+# Local BASHRC Setup by Kelvin Philip
+#+------------------------------------------------------------------------------------------
+
+#+------------------------------------------------------------------------------------------
+# VNC Server by kphilip
+#+------------------------------------------------------------------------------------------
+vncserver :1 -nolock -noreset -depth 24 -geometry 3820x1040
+vncconfig -display :1 -nowin &
+
+#+------------------------------------------------------------------------------------------
+# ENV Setup Paths
+#+------------------------------------------------------------------------------------------
+export USERBIN=$HOME/bin
+export INCLUDES=$HOME/.local/share/.env
+export PYLOGGERCONFIG=$HOME/.logging.conf
+export PYTHONPATH=$PYTHONPATH:$USERBIN/modules
+
+#+------------------------------------------------------------------------------------------------------+#
+# AutoComplete
+#+------------------------------------------------------------------------------------------------------+#
+bind 'set completion-ignore-case on'
+bind 'set show-all-if-ambiguous on'
+bind 'TAB:menu-complete'
+
+export autolist=1 
+export color 
+export colorcat
+
+shopt -s cdspell      				#lets you slightly misspell cd commands and still get success if close dir exists in path.
+shopt -s cdable_vars  				#lets you use variables in "cd commands"
+shopt -s checkhash    				#uses hach lookup for prior commands to reduce path search time.
+shopt -s checkwinsize 				#Fixes terminal to not overwrite old text
+shopt -s cmdhist      				#enable multi-line command history
+shopt -s extglob      				#Needed for programable completion
+
+#set match-hidden-files off         #only list non-hidden directories
+set colored-stats on
+set colored-completion-prefix on
+set visible-stats on
+
+#+------------------------------------------------------------------------------------------------------+#
+# Language
+#+------------------------------------------------------------------------------------------------------+#
+# http://perlgeek.de/en/article/set-up-a-clean-utf8-environment
+export LANG=en_US.UTF-8
+export PYTHONIOENCODING='utf-8'
+
+#+------------------------------------------------------------------------------------------
+# Source PE BASHRC File
+#+------------------------------------------------------------------------------------------
+source $DOTFILES/.bashrc.pe
+
+#+------------------------------------------------------------------------------------------
+# Source Master Aliases File
+#+------------------------------------------------------------------------------------------
+source $DOTFILES/.alias
+
+#+------------------------------------------------------------------------------------------
+# Command History
+#+------------------------------------------------------------------------------------------
+export HISTCONTROL=ignoredups:erasedups  
+export HISTSIZE=10000
+export HISTFILE=$HOME/.bash_history
+export HISTFILESIZE=$HISTSIZE
+export HISTIGNORE=”ls:exit”
+
+MY_BASH_BLUE="\033[0;34m" #Blue
+MY_BASH_NOCOLOR="\033[0m"
+HISTTIMEFORMAT=`echo -e ${MY_BASH_BLUE}[%y%m%d%H%M%S] $MY_BASH_NOCOLOR `
+
+# Avoid duplicates
+# When the shell exits, append to the history file instead of overwriting it
+shopt -s histappend
+
+# After each command, append to the history file and reread it
+history() {
+  _bash_history_sync
+  builtin history "$@"
+}
+
+_bash_history_sync() {
+  builtin history -a         #1
+  HISTFILESIZE=$HISTSIZE     #2
+  builtin history -c         #3
+  builtin history -r         #4
+}
+
+PROMPT_COMMAND=_bash_history_sync
+
+
+#+------------------------------------------------------------------------------------------
+# Unix Prompt Setup with Git Branch Info
+#+------------------------------------------------------------------------------------------
+
+#+------------------------------------------------------------------------------------------
+# get current branch in git repo
+#+------------------------------------------------------------------------------------------
+function parse_git_branch() {
+	BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
+	if [ ! "${BRANCH}" == "" ]
+	then
+		STAT=`parse_git_dirty`
+		echo "[${BRANCH}${STAT}]"
+	else
+		echo ""
+	fi
+}
+
+#+------------------------------------------------------------------------------------------
+# get current status of git repo
+#+------------------------------------------------------------------------------------------
+function parse_git_dirty {
+	status=`git status 2>&1 | tee`
+	dirty=`echo -n "${status}" 2> /dev/null | grep "modified:" &> /dev/null; echo "$?"`
+	untracked=`echo -n "${status}" 2> /dev/null | grep "Untracked files" &> /dev/null; echo "$?"`
+	ahead=`echo -n "${status}" 2> /dev/null | grep "Your branch is ahead of" &> /dev/null; echo "$?"`
+	newfile=`echo -n "${status}" 2> /dev/null | grep "new file:" &> /dev/null; echo "$?"`
+	renamed=`echo -n "${status}" 2> /dev/null | grep "renamed:" &> /dev/null; echo "$?"`
+	deleted=`echo -n "${status}" 2> /dev/null | grep "deleted:" &> /dev/null; echo "$?"`
+	bits=''
+	if [ "${renamed}" == "0" ]; then
+		bits=">${bits}"
+	fi
+	if [ "${ahead}" == "0" ]; then
+		bits="*${bits}"
+	fi
+	if [ "${newfile}" == "0" ]; then
+		bits="+${bits}"
+	fi
+	if [ "${untracked}" == "0" ]; then
+		bits="?${bits}"
+	fi
+	if [ "${deleted}" == "0" ]; then
+		bits="x${bits}"
+	fi
+	if [ "${dirty}" == "0" ]; then
+		bits="!${bits}"
+	fi
+	if [ ! "${bits}" == "" ]; then
+		echo " ${bits}"
+	else
+		echo ""
+	fi
+}
+
+#+------------------------------------------------------------------------------------------------------+#
+# Console Colors
+#+------------------------------------------------------------------------------------------------------+#
+export LSCOLORS='exfxcxdxCxegedabagacad'
+
+#+------------------------------------------------------------------------------------------
+# Unix Prompt
+#+------------------------------------------------------------------------------------------
+export PS1="\[\e[104m\]\!\[\e[m\] \[\e[34m\][\u@\h]\[\e[m\] \[\e[33m\]\w\[\e[m\] \[\e[31m\]\`parse_git_branch\`\[\e[m\]:  "
+
+#+------------------------------------------------------------------------------------------

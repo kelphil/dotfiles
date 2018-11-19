@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+#+------------------------------------------------------------------------------------------
+# Script Aliases by Kelvin Philip
+#+------------------------------------------------------------------------------------------
+alias fileManager='perl $USERBIN/filemgr.pl'
+alias listPath='perl $USERBIN/listPath.pl'
+alias recordPath='perl $USERBIN/recordPath.pl'
+
+#+------------------------------------------------------------------------------------------
+# Start an iPython Notebook Server 
+#+------------------------------------------------------------------------------------------
+alias ipynb='/u/MPG/dramsoft/python/bin/ipython notebook --profile dramsoft &'
+
+#+------------------------------------------------------------------------------------------

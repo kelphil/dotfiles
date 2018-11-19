@@ -1,0 +1,454 @@
+#!/usr/bin/env bash
+
+############################################################################
+# Standard BASH setup file for PEs
+# --------------------------------------------------------------------------
+# This file should be sourced inside PE's personal ~/.bashrc file. 
+# Put the following line (removing the "#") immediatly after 
+# the "source /cde/prod/SM/setup/.bashrc.cde" line in ~/.bashrc
+#  
+# source [__NEED STANDARD LOCATION___]/.bashrc.pe
+# 
+# -------------------------------------------------------------------------- 
+#
+# Features of this file include:
+#   - Defining PATH manipulation functions
+#   - Adding common tool directories to the PATH
+#   - Defining common env variables
+#   - Creating a 'pyenv' function to easily switch Python Environments
+#   - Set up variables for easy Command Line Prompt (PS1) customization
+#   - Define some additional functions for common tasks 
+#
+############################################################################
+
+
+#----------- Common Aliases --------------------------------------------------
+alias path='echo $PATH'
+alias u='cd /u/$USER'
+alias html='cd /u/$USER/public_html'
+
+#Setup proxy for external web access if needed (https://confluence.micron.com/confluence/x/RegABQ)
+export PROXY="proxy-web.micron.com:80"
+export FTP_PROXY=$PROXY
+export HTTP_PROXY=$PROXY
+export HTTPS_PROXY=$PROXY
+export ftp_proxy=$PROXY
+export http_proxy=$PROXY
+export https_proxy=$PROXY
+
+#Add items to this list to ignore proxy service when accessing these domains
+export NO_PROXY=".micron.com,rndweb1-lnx"
+
+#Okular looks better than evince??
+#export PS_VIEWER=/usr/bin/kghostview
+export PS_VIEWER=/cde/prod/bin/okular
+#export PS_VIEWER=/usr/bin/evince
+
+# For some backend tools
+export HOST=$HOSTNAME
+export SITE_NAME=`echo $SITE | tr [:lower:] [:upper:]`
+
+#export HISTCONTROL=ignoreboth   # Ignore blank lines and duplicates in history
+#[[ ! -d $HOME/hist ]] && mkdir -m 0700 $HOME/hist
+#export HISTFILE=${HOME}/hist/$HOSTNAME.$(date +%Y-%m-%d).$$.hist
+
+#---------- PATH manipulation functions --------------------------------------
+# By default, these functions will manipulate the $PATH variable by adding/removing/moving
+# paths onto the existing variable. The optional 2nd argument can specify a variable
+# besides $PATH to manipulate. 
+path_append ()  { 
+    path_var='PATH'; if [ -n "$2" ]; then path_var=$2; fi 
+    path_remove $1 $path_var; 
+    export $path_var="${!path_var}:$1"; 
+}
+path_prepend () { 
+    path_var='PATH'; if [ -n "$2" ]; then path_var=$2; fi 
+    path_remove $1 $path_var; 
+    export $path_var="$1:${!path_var}"; 
+}
+path_remove ()  { 
+    path_var='PATH'; if [ -n "$2" ]; then path_var=$2; fi 
+    export $path_var=`echo -n ${!path_var} | awk -v RS=: -v ORS=: '$0 != "'$1'"' | sed 's/:$//'`; 
+}
+
+
+#----------- PE PATH CONFIGURATION ----------------------------------------------
+# See https://confluence.micron.com/confluence/display/DEGPE/Software+Tool+Summary for other common tool paths
+### Dirs for common PE tools.    ### Common tools in each dir (NOT all-inclusive).
+#path_prepend /u/prbsoft/bin      # pmap, psums, juice (pmap must be at beginning of path to override UNIX pmap cmd)
+#path_prepend /u/pesoft/bin       # tc, frpt, fmap, fdat95, pptx, lotx, mtx, parmap, wmede, workweek, fancy, csv2tilda
+#path_prepend /u/summary/bin      # tsums, fid
+#path_prepend /u/dramsoft/bin     # fdat2table, bsums, mtsums, mtgroup, p2p, pid_shift, calclww
+#path_prepend /proj/main/bin      # PYE lifeguard tools
+#path_prepend /u/$USER/bin        # standard place to put personal scripts and binaries
+#path_prepend /home/$USER/bin     # standard place to put personal scripts and binaries
+#path_prepend /cde/prod/bin       # this dir is already added in .bashrc.cde. But moving it to beginning on PATH to force default python to CDE 
+
+
+#----------- COMMON VARIABLES ------------------------------------------------
+# Proxy to get outside Micron, e.g. for git or wget (to download files like program installers)
+# https://confluence.micron.com/confluence/display/DEGPE/Linux+Tips#LinuxTips-ProxyServer 
+export PROXY="proxy-web.micron.com:80"
+export FTP_PROXY=$PROXY
+export HTTP_PROXY=$PROXY
+export HTTPS_PROXY=$PROXY
+export ftp_proxy=$PROXY
+export http_proxy=$PROXY
+export https_proxy=$PROXY
+
+export NO_PROXY=.micron.com,rndweb1-lnx
+export no_proxy=.micron.com,rndweb1-lnx
+
+# required for PS viewer for RHEL 6
+export PS_VIEWER=/usr/bin/evince  
+
+# set default perl and other apps to 64 bit environment
+source /mu/bin/64bitenv
+
+#--------- PYTHON SHARED CONFIGURATION SETTINGS -----------------------------------
+
+# Set shared pip configuration file so trusted sites can be managed 
+# https://pip.pypa.io/en/stable/user_guide/#config-file
+# !!!!!!!!!!!!!!!!!!! NEEDS TO BE UDPATED TO SHARED LOCATION !!!!!!!!!!!!!
+# !!!!!!!!!!!!!!!!!!! copy /home/jlion/.config/pip/pip.conf into a shared location, and update
+# !!!!!!!!!!!!!!!!!!! XDG_CONFIG_DIRS to point to the shared directory 
+export XDG_CONFIG_DIRS=/home/jlion/.config/
+
+# Update the user's .condarc file to ignore ssl_verify to get around certitifcate problems. 
+grep -s -q -F 'ssl_verify: False' ~/.condarc || echo 'ssl_verify: False' >> ~/.condarc
+
+
+#----------- CUSTOM PS1 PROMPT Setup ----------------------------------------
+# Color variables
+RED="\[\033[0;31m\]"
+GREEN="\[\033[1;32m\]"
+YELLOW="\[\033[1;33m\]"
+LTBLUE="\[\033[1;34m\]"
+DKYELLOW="\[\033[0;33m\]"
+CYAN="\[\033[1;36m\]"
+DKCYAN="\[\033[0;36m\]"
+WHITE="\[\033[0;37m\]"
+
+# RESET turns your text back to black, after printing the prompt in color.  Omit if you want colored text.
+RESET="\[\033[0m\]"
+
+# Some common variables/preferences
+DATE="\D{%F %T}"     # Current date, including hours and minutes
+USR="\u"             # User name
+HOST="\h"            # Host name
+WHOWHERE="\u@\h"     # User at Host
+WHEREAMI="\w"        # Current path
+CURDIR="\W"          # Current directory 
+HIST="\!"            # History number
+
+# Assemble your prompt as in the examples below.  Insert spaces or other characters, as preferred.
+# Use the Color Variables to change any text following the Color Variable, up through the next Color Variable. 
+# Add your custom 'export PS1' line into your ~/.bashrc file to override the default value below. 
+# See examples here https://confluence.micron.com/confluence/display/DEGPE/Linux+for+PEs#LinuxforPEs-ShellCustomization
+# 
+# export PS1="$RED$DATE$WHERAMI>$RESET "
+# export PS1="$CYAN($DATE) $RED$HOST:$GREEN$WHEREAMI > $YELLOW"
+export PS1="$YELLOW$HOST:$GREEN$CURDIR$YELLOW > $RESET"
+#----------- /CUSTOM PS1 PROMPT Setup ----------------------------------------
+
+
+#----------- PYTHON ENVIRONMENT SWITCHER --------------------------------------
+# The default PE PYENV should be the CDE bin. This bin is required to do df2, simulation, 
+# extraction work, etc. PEs should never lose the ability to do this kind of work. 
+# PEs may add "pyenv OTHER-ENV" into their ~/.bashrc file if they want to automatically
+# switch to another environment by default. However, the CDE bin dir will still be in their path. 
+PYENV_DEFAULT_ENV="cde"
+
+# CONDA_ENVS_PATH can be appended to in personal .bashrc file as follows with other conda environment directories 
+# path_append /other/conda/env/directories CONDA_ENVS_PATH
+export CONDA_ENVS_PATH=/mu/sdk/anaconda/envs:/u/dramsoft/.conda/envs:/u/$USER/.conda/envs:/home/$USER/.conda/envs
+
+# This must be in the path so Conda is always avaialble 
+path_append '/mu/sdk/anaconda/bin'
+
+# 'source deactivate' only works if I put it into a standalone function. Doesn't work when it's embedded
+# into the pyenv function. No idea why. It throws "too many arguments" error, which is somehow 
+# related to this - https://stackoverflow.com/questions/31752919/conda-source-deactivate-error-too-many-arguments 
+function conda_deactivate() { source deactivate; }
+
+function pyenv_help() {
+cat << pyenvhelpstr
+
+~~~ PE Python Environment Manager ~~~
+
+Use 'pyenv' to activate, create and manage Python Environments. 
+
+When an environment is activated, the version of Python, including supporting tools like 
+'conda', 'pip', and 'ipython', and all python modules and packaged installed in that environment, will
+be used by default for the current terminal session. 
+
+To use these Python in these environments in a script, add '/bin/python' to the end of the ENV_PATH 
+shown in 'pyenv --list', and include that in the "#!" line of a script file. For example, to use the 
+public PE Python 3.6 distribution, include the following as the first line in your script:
+#!/u/dramsoft/.conda/envs/py36/bin/python
+
+
+--- Public Environments ---
+
+Several public Python environments are available for use, with common packages pre-installed. 
+See PE-owned environments here: https://confluence.micron.com/confluence/display/DEGPE/Public+Environments 
+
+PEs cannot install packages into the public environments. If you have a package you want, you 
+can request DRAMSOFT install it, but not all requests will be installed. 
+
+
+--- Personal Environments and Installing Packages ---
+
+PEs can easily create their own personal Python environments which they fully own. You can pick 
+your own version of Python and install any packages you would like using 'conda' or 'pip'. 
+
+After installing and activating a personal environment, use 'conda install <package name>' to 
+attempt to install a package from the Anaconda package repository (https://anaconda.org/anaconda/repo). 
+Conda packages are pre-compiled and are guaranteed to work on the OS, but not all Python packages 
+are avaiable through Conda. If unable to install using 'conda', try 'pip install <package name>' 
+to use the standard Python installer. 
+
+Use 'conda list' to see currently installed packages. 
+
+
+--- pyenv Usage --- 
+
+Run 'pyenv <arguments>' with the following options. 
+
+Arguments in [] are optional. If not included, you will be prompted for each value.
+
+
+  <ENV_NAME>                                   Activate an environment "ENV_NAME". Examples:
+                                                 pyenv py36
+                                                 pyenv mySpecialPython
+
+  --list                                       List avaialble shared and personal python environments to switch to. 
+
+  --new [NEW_ENV VER u|home]                   Create a new Python Environment in a personal directory. 
+                                               Places in '/u/$USER/.conda/envs' or '/home/$USER/.conda/envs'
+                                               It is highly recommended to use '/u/$USER/.conda/envs' because
+                                               this directory can be accessed by scripts running on all 
+                                               common PE servers. 
+
+  --clone [CLONED_ENV NEW_ENV u|home]          Clone an existing environment into a personal directory. This will 
+                                               create an exact copy of an existing environment, including all installed 
+                                               packages. After cloning, you can install additional packages into the environment. 
+
+                                               You can clone an existing Shared Environment to get all of the standard PE packages
+                                               pre-installed. To clone an environment not listed in 'pyenv --list' (for example, a 
+                                               colleagues environment), first run 'path_append /path/to/other/env CONDA_ENVS_PATH', 
+                                               then try 'pyenv --list' and 'pyenv --clone' again. 
+
+  --remove [ENV_NAME]                          Remove a personal environment. 
+
+pyenvhelpstr
+}
+
+function pyenv() {
+
+    # Print help 
+    if [ "$#" -eq 0 ] || [ "$1" == "--help" ] || [ "$1" == "-h" ]; then
+        pyenv_help
+        printf "\n~~~ Environments ~~~\n\n"
+        pyenv_list
+
+    elif [ "$1" == "--new" ]; then
+
+        # new env name is 2nd argument, or prompt for one
+        if [ -z "$2" ]; then read -p "New environment name: " newenvname; else newenvname=$2; fi 
+        if [ -z "$newenvname" ]; then echo "Must supply new environment name"; return; fi
+        if ! [[ $newenvname =~ ^[-_a-zA-Z0-9]*$ ]]; then echo "Invalid environment name. Spaces and special characters not allowed."; return; fi
+
+        # see if name is already in use, either in shared or personal environments 
+        newenvname_valid=$(pyenv --list | grep -v -E '\-\-\-|ENV_NAME|^$' | cut -f1 -d' ' | grep $newenvname)
+        if [ -n "$newenvname_valid" ]; then echo "Name already in use. Choose another name."; return; fi 
+
+        # python version is 3rd argument, or prompt for one
+        if [ -z "$3" ]; then read -p "Specify python version (2.7/3.4/3.5/[3.6]): " newenvversion; newenvversion=${newenvversion:-3.6}; 
+        else newenvversion=$3; fi 
+        if ! [[ $newenvversion =~ ^(2\.7|3\.4|3\.5|3\.6)$ ]]; then echo "Invalid version"; return; fi 
+
+        # requires BE account 
+        if [ -z "$4" ]; then read -p "Install in /u/$USER directory (HIGHLY recommended) or /home/$USER directory? ([u]/home): " newenvdir; newenvdir=${newenvdir:-u}; 
+        else newenvdir=$4; fi
+        if ! [[ $newenvdir =~ ^(u|home)$ ]]; then echo "Select 'u' or 'home' only"; return; fi 
+
+        newenvpath=/$newenvdir/$USER/.conda/envs/$newenvname
+
+        printf  "Install python %s at '%s'? ([yes]/no): " "$newenvversion" "$newenvpath" 
+        read confirminstall
+        confirminstall=${confirminstall:-yes}
+
+        if [ "$confirminstall" == "yes" ]; then
+            printf "Installing new environment using \"conda create --prefix $newenvpath python=$newenvversion\"...\n"
+            conda create --prefix $newenvpath python=$newenvversion 
+
+            # activate new env if conda command didn't return error flag
+            if [ $? -eq 0 ]; then   
+                pyenv $newenvname
+                pyenv_update_envlist
+                printf "\nYour new personal environment, %s, is now active. You have full control of this environment." "$newenvname"
+                printf "\nSwitch to this environment at any time using 'pyenv %s'" "$newenvname"
+                printf "\n\nUse 'conda list' to see currently installed packages.\n\nUse 'conda install <package name>' or 'pip install <package name>' to install packages.\n\n"
+            else
+                printf "Error installing environment"
+            fi
+        fi
+
+    elif [ "$1" == "--remove" ]; then
+
+        removeenvname=$2
+        if [ -z "$2" ]; then 
+            pyenv_list personal
+            read -p "Remove which personal environment? " removeenvname
+        fi
+
+        # check to only allow removing Personal Environments 
+        removeenvname_valid=$(pyenv_list personal | tail -n +3 | cut -f1 -d' ' | grep $removeenvname)
+
+        if [ -z "$removeenvname_valid" ]; then 
+            echo "Invalid personal environment name. Cannot remove."; 
+        else
+            conda remove --name $removeenvname --all
+            pyenv_update_envlist
+        fi
+
+    elif [ "$1" == "--clone" ]; then 
+
+        cloneenvname=$2
+        if [ -z "$2" ]; then 
+            pyenv_list
+            read -p "Clone which of the above environments as a new personal environment? " cloneenvname
+        fi
+
+        # Can only clone existing conda environments. Can't clone cde 
+        cloneenvname_valid=$(pyenv --list | grep -v -E '\-\-\-|ENV_NAME|^$|cde' | cut -f1 -d' ' | grep $cloneenvname)
+        if [ -z "$cloneenvname_valid" ]; then echo "Select a valid environment name. Cannot clone 'cde'."; return; fi
+
+
+        # Below is largely copied from "--new". Could be refactored out 
+        if [ -z "$3" ]; then read -p "New environment name: " newenvname; else newenvname=$3; fi 
+        if [ -z "$newenvname" ]; then echo "Must supply new environment name"; return; fi
+        if ! [[ $newenvname =~ ^[-_a-zA-Z0-9]*$ ]]; then echo "Invalid environment name. Spaces and special characters not allowed."; return; fi
+
+        # see if name is already in use, either in shared or personal environments 
+        newenvname_valid=$(pyenv --list | grep -v -E '\-\-\-|ENV_NAME|^$' | cut -f1 -d' ' | grep $newenvname)
+        if [ -n "$newenvname_valid" ]; then echo "Name already in use. Choose another name."; return; fi 
+
+        if [ -z "$4" ]; then read -p "Install in /u/$USER directory (HIGHLY recommended) or /home/$USER directory? ([u]/home): " newenvdir; newenvdir=${newenvdir:-u}; 
+        else newenvdir=$4; fi
+        if ! [[ $newenvdir =~ ^(u|home)$ ]]; then echo "Select 'u' or 'home' only"; return; fi 
+
+        newenvpath=/$newenvdir/$USER/.conda/envs/$newenvname
+
+        printf  "Clone '%s' environment to '%s'? ([yes]/no): " "$cloneenvname" "$newenvpath" 
+        read confirminstall
+        confirminstall=${confirminstall:-yes}
+
+        if [ "$confirminstall" == "yes" ]; then
+            printf "Cloning environment using \"conda create --prefix $newenvpath --clone $cloneenvname\"\n"
+            conda create --prefix $newenvpath --clone $cloneenvname
+
+            # activate new env if conda command didn't return error flag
+            if [ $? -eq 0 ]; then   
+                pyenv $newenvname
+                pyenv_update_envlist
+                printf "\nYou've successflly cloned '%s' into a new personal environment, '%s'. '%s' is now active and\n" "$cloneenvname" "$newenvname" "$newenvname"
+                printf "you have full control of this environment. Switch to this environment at any time using 'pyenv %s'" "$newenvname"
+                printf "\n\nUse 'conda list' to see currently installed packages.\n\nUse 'conda install <package name>' or 'pip install <package name>' to install packages.\n\n"
+            else
+                printf "Error cloning environment"
+            fi
+        fi
+
+    elif [ "$1" == "--list" ]; then 
+        pyenv_list
+
+    elif [ "$#" -eq 1 ]; then
+
+        if [ "$1" == "def" ] || [ "$1" == "default" ]; then
+            pyenv $PYENV_DEFAULT_ENV
+
+        # the CDE python is not a Conda installation, so just deactivate conda entirely to go back to it 
+        elif [ "$1" == "cde" ]; then 
+            if [ -n "${CONDA_DEFAULT_ENV}" ]; then 
+                conda_deactivate
+            fi
+            path_prepend '/cde/prod/bin'
+
+        # Try to use Conda to activate other environments 
+        else
+            source activate $1
+        fi
+
+    else
+        pyenv help
+    fi 
+}
+
+function pyenv_list() {
+    
+    if [ -z "$PYENV_ENV_LIST" ]; then
+        pyenv_update_envlist
+    fi
+
+    if [ -z "$1" ] || [ "$1" == "shared" ]; then
+        printf '%s\n' '--- Shared Python Environments ---'
+        printf '%-24s %-50s\n' 'ENV_NAME' 'ENV_PATH'
+        printf 'cde                      /cde/prod/bin/python         (Common Design Environment python 2.7)\n'
+        echo "$PYENV_ENV_LIST" | grep -v $USER
+        printf '\n'
+    fi 
+
+    if [ -z "$1" ] || [ "$1" == "personal" ]; then
+        printf '%s\n' '--- Personal Python Environments ---'
+        printf '%-24s %-50s\n' 'ENV_NAME' 'ENV_PATH'
+        echo "$PYENV_ENV_LIST" | grep $USER
+        printf '\n'
+    fi
+}
+
+function pyenv_update_envlist() {
+    PYENV_ENV_LIST=$(/mu/sdk/anaconda/bin/conda env list | tail -n +3)
+}
+
+
+#----------------- Common Helper Functions ---------------------------------
+
+# Easily extract all compressed file types
+extract () {
+   if [ -f "$1" ] ; then
+       case $1 in
+           *.tar.bz2)   tar xvjf -- "$1"    ;;
+           *.tar.gz)    tar xvzf "$1"    ;;
+           *.tar.xz)    tar xf "$1"    ;;
+           *.bz2)       bunzip2 -- "$1"     ;;
+           *.rar)       unrar x -- "$1"     ;;
+           *.gz)        gunzip -- "$1"      ;;
+           *.tar)       tar xvf -- "$1"     ;;
+           *.tbz2)      tar xvjf -- "$1"    ;;
+           *.tgz)       tar xvzf -- "$1"    ;;
+           *.zip)       unzip -- "$1"       ;;
+           *.Z)         uncompress -- "$1"  ;;
+           *.7z)        7z x -- "$1"        ;;
+           *)           echo "don't know how to extract '$1'..." ;;
+       esac
+   else
+       echo "'$1' is not a valid file"
+   fi
+}
+
+
+# Epoch time conversion
+epoch() {
+    TESTREG="[\d{10}]"
+    if [[ "$1" =~ $TESTREG ]]; then
+        date -d @$*                 # convert epoch to date string
+    else
+        if [ $# -gt 0 ]; then
+            date +%s --date="$*"    # convert date string to epoch
+        else
+            date +%s                # show current epoch time 
+        fi
+    fi
+}
