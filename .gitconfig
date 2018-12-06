@@ -1,6 +1,7 @@
 [user]
 	email = kelvinphilip@gmail.com
 	name = Kelvin Philip
+	signingkey = DF0E37B506655686
 
 [color]
 	branch = auto
