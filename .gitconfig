@@ -1,5 +1,5 @@
 [user]
-	email = johndoe@gmail.com
+	email = kelvinphilip@gmail.com
 	name = Kelvin Philip
 
 [color]
@@ -96,7 +96,7 @@
 # A nice little github-like colorful, split diff right in the console.
 # via http://owen.cymru/github-style-diff-in-terminal-with-icdiff/
 [diff]
-	tool = kompare
+	tool = diff
 [difftool]
 	prompt = false
 [difftool "icdiff"]
