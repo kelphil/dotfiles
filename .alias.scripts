@@ -10,6 +10,6 @@ alias recordPath='perl $USERBIN/recordPath.pl'
 #+------------------------------------------------------------------------------------------
 # Start an iPython Notebook Server 
 #+------------------------------------------------------------------------------------------
-alias ipynb='/u/MPG/dramsoft/python/bin/ipython notebook --profile dramsoft &'
+#alias ipynb='$HOME/python/bin/ipython notebook --profile dramsoft &'
 
 #+------------------------------------------------------------------------------------------

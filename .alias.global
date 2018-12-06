@@ -19,10 +19,9 @@ alias chgrp='chgrp --preserve-root'
 ## -----------------------------------------------------------------------------------------
 # List
 ## -----------------------------------------------------------------------------------------
-alias ls='ls --color=auto'
 alias ll='ls -la'
-alias l.='ls -d .* --color=auto'
-alias l='ls -lrat --color=auto'
+alias l.='ls -d .*'
+alias l='ls -lrat'
 
 ## -----------------------------------------------------------------------------------------
 # Search
@@ -70,7 +69,7 @@ alias nowdate='date +"%d-%m-%Y"'
 # Editors
 ## -----------------------------------------------------------------------------------------
 alias v=vim
-alias s=sublime
+alias s=/usr/local/bin/sublime
 alias n=nedit
 alias vis='vim "+set si"'
 alias edit='vim'

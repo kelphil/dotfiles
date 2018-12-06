@@ -102,4 +102,6 @@
 [difftool "icdiff"]
   cmd = /usr/local/bin/icdiff --line-numbers $LOCAL $REMOTE
 [gpg]
-	program = gpg2
+	program = /usr/local/bin/gpg
+[credential]
+	helper = cache --timeout=86400

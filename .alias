@@ -9,8 +9,6 @@
 #+------------------------------------------------------------------------------------------
 source $DOTFILES/.alias.global
 source $DOTFILES/.alias.scripts
-source $DOTFILES/.alias.projects
-source $DOTFILES/.alias.tester
-source $HOME/.alias.cdp
+#source $HOME/.alias.cdp
 
 #+------------------------------------------------------------------------------------------
