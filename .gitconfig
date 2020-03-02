@@ -1,7 +1,7 @@
 [user]
 	email = kelvinphilip@gmail.com
 	name = Kelvin Philip
-	signingkey = DF0E37B506655686
+	signingkey = 2C2733CABA3F766E
 
 [color]
 	branch = auto
@@ -103,6 +103,6 @@
 [difftool "icdiff"]
   cmd = /usr/local/bin/icdiff --line-numbers $LOCAL $REMOTE
 [gpg]
-	program = /usr/local/bin/gpg
+	program = gpg
 [credential]
 	helper = cache --timeout=86400
