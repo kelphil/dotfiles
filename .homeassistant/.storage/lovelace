@@ -1,0 +1,166 @@
+{
+    "data": {
+        "config": {
+            "title": "Home",
+            "views": [
+                {
+                    "badges": [
+                        {
+                            "entity": "person.kelvin_philip"
+                        },
+                        {
+                            "entity": "person.gincy"
+                        }
+                    ],
+                    "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "entity": "light.living_room_light_right"
+                                },
+                                {
+                                    "entity": "light.living_room_light_left"
+                                },
+                                {
+                                    "entity": "switch.living_room_lamp"
+                                },
+                                {
+                                    "entity": "climate.my_ecobee"
+                                },
+                                {
+                                    "entity": "media_player.living_room_tv"
+                                },
+                                {
+                                    "entity": "sensor.hl_l2380dw_status"
+                                },
+                                {
+                                    "entity": "weather.home"
+                                },
+                                {
+                                    "entity": "sun.sun"
+                                },
+                                {
+                                    "entity": "sensor.sm_n950u_battery_level"
+                                },
+                                {
+                                    "entity": "sensor.sm_n950u_battery_level_2"
+                                }
+                            ],
+                            "type": "glance"
+                        },
+                        {
+                            "entity": "climate.my_ecobee",
+                            "type": "thermostat"
+                        },
+                        {
+                            "entity": "media_player.living_room_tv",
+                            "type": "media-control"
+                        },
+                        {
+                            "entity": "media_player.living_room_speaker",
+                            "type": "media-control"
+                        },
+                        {
+                            "entity": "weather.home",
+                            "type": "weather-forecast"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "weather.home"
+                                },
+                                {
+                                    "entity": "climate.my_ecobee"
+                                }
+                            ],
+                            "hours_to_show": 24,
+                            "refresh_interval": 0,
+                            "type": "history-graph"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.worldwide_coronavirus_confirmed"
+                                },
+                                {
+                                    "entity": "sensor.worldwide_coronavirus_current"
+                                },
+                                {
+                                    "entity": "sensor.worldwide_coronavirus_deaths"
+                                },
+                                {
+                                    "entity": "sensor.canada_coronavirus_confirmed"
+                                },
+                                {
+                                    "entity": "sensor.canada_coronavirus_current"
+                                },
+                                {
+                                    "entity": "sensor.canada_coronavirus_deaths"
+                                }
+                            ],
+                            "show_icon": false,
+                            "type": "glance"
+                        }
+                    ],
+                    "panel": false,
+                    "path": "default_view",
+                    "title": "Home"
+                },
+                {
+                    "badges": [
+                        {
+                            "entity": "light.living_room_light_right"
+                        },
+                        {
+                            "entity": "light.living_room_light_left"
+                        },
+                        {
+                            "entity": "switch.living_room_lamp"
+                        }
+                    ],
+                    "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "entity": "scene.dim_lights"
+                                },
+                                {
+                                    "entity": "scene.lights"
+                                },
+                                {
+                                    "entity": "scene.normal_lights"
+                                },
+                                {
+                                    "entity": "scene.lights_off"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "type": "entities"
+                        },
+                        {
+                            "entity": "light.living_room_light_right",
+                            "type": "light"
+                        },
+                        {
+                            "entity": "light.living_room_light_left",
+                            "type": "light"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.living_room_lamp"
+                                }
+                            ],
+                            "type": "entities"
+                        }
+                    ],
+                    "panel": false,
+                    "path": "scenes",
+                    "title": "Lights"
+                }
+            ]
+        }
+    },
+    "key": "lovelace",
+    "version": 1
+}

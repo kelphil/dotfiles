@@ -1,0 +1,263 @@
+{
+    "data": {
+        "entries": [
+            {
+                "connection_class": "cloud_poll",
+                "data": {
+                    "track_home": true
+                },
+                "domain": "met",
+                "entry_id": "72fdc2bf846c4a219ced65740fb31221",
+                "options": {},
+                "source": "onboarding",
+                "system_options": {
+                    "disable_new_entities": false
+                },
+                "title": "Home",
+                "unique_id": null,
+                "version": 1
+            },
+            {
+                "connection_class": "local_push",
+                "data": {
+                    "user_id": "753c314f5f284339812416ec813857b1"
+                },
+                "domain": "cast",
+                "entry_id": "c777a989e5254e349ba934fcdb8f14b2",
+                "options": {},
+                "source": "zeroconf",
+                "system_options": {
+                    "disable_new_entities": false
+                },
+                "title": "Google Cast",
+                "unique_id": null,
+                "version": 1
+            },
+            {
+                "connection_class": "local_poll",
+                "data": {
+                    "AccessoryIP": "10.163.23.122",
+                    "AccessoryLTPK": "e2c8df2b16e938ed825c69403e01bb41059a9142137b42990b57142713dc5856",
+                    "AccessoryPairingID": "79:E2:31:3A:E0:7E",
+                    "AccessoryPort": 1200,
+                    "Connection": "IP",
+                    "iOSDeviceLTPK": "4f018283e2b2f0eddfff0a253ad8516ba86b82c2621fe751ddc16e67b8205ca6",
+                    "iOSDeviceLTSK": "b74d15cbcf1da0f80cd914cfa784583e6e7a89cab557a4b5c3ea31406fd7dbf8",
+                    "iOSPairingId": "cbb3ce69-8cc3-4d0a-9d8d-c78264035792"
+                },
+                "domain": "homekit_controller",
+                "entry_id": "a58f48463be645c1bde71a35f82c5f8f",
+                "options": {},
+                "source": "zeroconf",
+                "system_options": {
+                    "disable_new_entities": false
+                },
+                "title": "My ecobee",
+                "unique_id": "79:e2:31:3a:e0:7e",
+                "version": 1
+            },
+            {
+                "connection_class": "cloud_push",
+                "data": {
+                    "app_data": {
+                        "push_token": "fhnA3FSW2NA:APA91bEt3ASDByeH48QPsZzZeYGizGkVYpsKmxPwJ6eajre0a1q7knwQ_2mQPW_FMThrNNvlG37b6K8m-PWdNmE6QCaenZ4eA9DzkrAFqbgMchtIn2j18X5inc17bnhxdR8rxhSb8Zjv",
+                        "push_url": "https://mobile-apps.home-assistant.io/api/sendPush/android/v1"
+                    },
+                    "app_id": "io.homeassistant.companion.android",
+                    "app_name": "Home Assistant",
+                    "app_version": "1.8.0-144 (144)",
+                    "device_id": "69fb0144a83b60e2",
+                    "device_name": "SM-N950U",
+                    "manufacturer": "samsung",
+                    "model": "SM-N950U",
+                    "os_name": "Android",
+                    "os_version": "28",
+                    "supports_encryption": false,
+                    "user_id": "4babf321d19b4d2ab564ee5b1c128474",
+                    "webhook_id": "73033782e5d4f4606bdc82e111dc8873a0bda39359a19e87a1154a25a8cca34a"
+                },
+                "domain": "mobile_app",
+                "entry_id": "99d12d88a89c40fd9b50ca8e6db69a4b",
+                "options": {},
+                "source": "registration",
+                "system_options": {
+                    "disable_new_entities": false
+                },
+                "title": "SM-N950U",
+                "unique_id": "io.homeassistant.companion.android-69fb0144a83b60e2",
+                "version": 1
+            },
+            {
+                "connection_class": "local_poll",
+                "data": {
+                    "host": "BRW9CAD97B3BCC0.local",
+                    "type": "laser"
+                },
+                "domain": "brother",
+                "entry_id": "7fde400a669e45e09df3b41b939504e7",
+                "options": {},
+                "source": "zeroconf",
+                "system_options": {
+                    "disable_new_entities": false
+                },
+                "title": "HL-L2380DW U63886K4N561363",
+                "unique_id": "u63886k4n561363",
+                "version": 1
+            },
+            {
+                "connection_class": "cloud_poll",
+                "data": {
+                    "country": "__worldwide"
+                },
+                "domain": "coronavirus",
+                "entry_id": "99558ad0c41b43ec9ef56ad3f101184a",
+                "options": {},
+                "source": "user",
+                "system_options": {
+                    "disable_new_entities": false
+                },
+                "title": "Worldwide",
+                "unique_id": "__worldwide",
+                "version": 1
+            },
+            {
+                "connection_class": "cloud_poll",
+                "data": {
+                    "country": "Canada"
+                },
+                "domain": "coronavirus",
+                "entry_id": "1645d7ea6c4f4f1791d2f3df6a658987",
+                "options": {},
+                "source": "user",
+                "system_options": {
+                    "disable_new_entities": false
+                },
+                "title": "Canada",
+                "unique_id": "Canada",
+                "version": 1
+            },
+            {
+                "connection_class": "local_push",
+                "data": {},
+                "domain": "wemo",
+                "entry_id": "823a8d0f88954871b911bcf69472d08d",
+                "options": {},
+                "source": "user",
+                "system_options": {
+                    "disable_new_entities": false
+                },
+                "title": "Wemo",
+                "unique_id": null,
+                "version": 1
+            },
+            {
+                "connection_class": "unknown",
+                "data": {
+                    "gateway_id": "7e3a4d520440009c",
+                    "host": "10.163.23.137",
+                    "identity": "3e6a52e3a96f4773bec04b27a9a13038",
+                    "import_groups": false,
+                    "key": "As5d83PxD84rs3gy"
+                },
+                "domain": "tradfri",
+                "entry_id": "e7684e5a2bba4792bd61e2322bea9f6b",
+                "options": {},
+                "source": "homekit",
+                "system_options": {
+                    "disable_new_entities": false
+                },
+                "title": "10.163.23.137",
+                "unique_id": null,
+                "version": 1
+            },
+            {
+                "connection_class": "cloud_poll",
+                "data": {
+                    "categories": [],
+                    "latitude": 43.83886829915544,
+                    "longitude": -79.38750207424165,
+                    "radius": 500,
+                    "scan_interval": 300
+                },
+                "domain": "gdacs",
+                "entry_id": "189cfab9d1494a1f8147c19c8f371dc8",
+                "options": {},
+                "source": "user",
+                "system_options": {
+                    "disable_new_entities": false
+                },
+                "title": "43.83886829915544, -79.38750207424165",
+                "unique_id": "43.83886829915544, -79.38750207424165",
+                "version": 1
+            },
+            {
+                "connection_class": "cloud_push",
+                "data": {
+                    "app_data": {
+                        "push_token": "eoXSRgayOZI:APA91bGwIpjIIlryPoz9Pm1dh2wpveVHeflflHXyL-YVHJ38BfMMyz5XqA9fwP63TkOgkvutcIV8-8B13rBVp8thNqd6cSzYZPD1G_UzmRS2XQIMD3BgIwvgtZx5pRIzpl_qXQmsZFFp",
+                        "push_url": "https://mobile-apps.home-assistant.io/api/sendPush/android/v1"
+                    },
+                    "app_id": "io.homeassistant.companion.android",
+                    "app_name": "Home Assistant",
+                    "app_version": "1.8.0-144 (144)",
+                    "device_id": "48c3373459466819",
+                    "device_name": "SM-N950U",
+                    "manufacturer": "samsung",
+                    "model": "SM-N950U",
+                    "os_name": "Android",
+                    "os_version": "28",
+                    "supports_encryption": false,
+                    "user_id": "cea348f38fcc489ba7b18382e249a30b",
+                    "webhook_id": "ac40bfdf1e474f8924f2e35bffb56fec24c5487ff29334a5e327398fff60d882"
+                },
+                "domain": "mobile_app",
+                "entry_id": "355875a0dc3b44dea3acdbdd4cbedff0",
+                "options": {},
+                "source": "registration",
+                "system_options": {
+                    "disable_new_entities": false
+                },
+                "title": "SM-N950U",
+                "unique_id": "io.homeassistant.companion.android-48c3373459466819",
+                "version": 1
+            },
+            {
+                "connection_class": "unknown",
+                "data": {
+                    "cloudhook": false,
+                    "secret": "900fda245ca0875e93127cfd7a357ad3",
+                    "webhook_id": "0e77418bf31014b0e32951b0565cde7dee7771f001d96a36181316df67b4ae57"
+                },
+                "domain": "owntracks",
+                "entry_id": "758ca2a363e54dbd92f9c3731192edee",
+                "options": {},
+                "source": "user",
+                "system_options": {
+                    "disable_new_entities": false
+                },
+                "title": "OwnTracks",
+                "unique_id": null,
+                "version": 1
+            },
+            {
+                "connection_class": "unknown",
+                "data": {
+                    "cloudhook": false,
+                    "webhook_id": "c0a25c7530dd7b6220fdb126043499b8cb1ed17e44f9617b1583e888a9ade313"
+                },
+                "domain": "ifttt",
+                "entry_id": "5562d6d7cea548c2bc34bcce10f0e4ad",
+                "options": {},
+                "source": "user",
+                "system_options": {
+                    "disable_new_entities": false
+                },
+                "title": "IFTTT Webhook",
+                "unique_id": null,
+                "version": 1
+            }
+        ]
+    },
+    "key": "core.config_entries",
+    "version": 1
+}

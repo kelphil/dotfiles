@@ -1,0 +1,24 @@
+{
+    "data": {
+        "items": [
+            {
+                "device_trackers": [
+                    "device_tracker.sm_n950u"
+                ],
+                "id": "kelvin",
+                "name": "Kelvin",
+                "user_id": "4babf321d19b4d2ab564ee5b1c128474"
+            },
+            {
+                "device_trackers": [
+                    "device_tracker.sm_n950u_2"
+                ],
+                "id": "gincy",
+                "name": "Gincy",
+                "user_id": "cea348f38fcc489ba7b18382e249a30b"
+            }
+        ]
+    },
+    "key": "person",
+    "version": 2
+}

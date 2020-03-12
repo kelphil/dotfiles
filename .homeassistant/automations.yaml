@@ -1,0 +1,121 @@
+- id: '1583815338378'
+  alias: Confirmed Corona Virus Cases
+  description: ''
+  trigger:
+  - entity_id: sensor.worldwide_coronavirus_deaths
+    from: '4009'
+    platform: state
+    to: '4010'
+  condition: []
+  action:
+  - scene: scene.warning_lights
+  - delay: 00:00:05
+  - scene: scene.normal_lights
+- id: '1583818259212'
+  alias: Colorful Lights When Reaching Home
+  description: ''
+  trigger:
+  - entity_id: person.kelvin_philip
+    event: enter
+    platform: zone
+    zone: zone.home
+  condition:
+  - condition: and
+    conditions:
+    - condition: zone
+      entity_id: person.gincy
+      zone: zone.home
+  action:
+  - scene: scene.lights
+  - delay: 00:10:00
+  - after: sunset
+    before: sunrise
+    condition: sun
+  - scene: scene.normal_lights
+- id: '1583818311596'
+  alias: Lights at Sunset
+  description: ''
+  trigger:
+  - event: sunset
+    platform: sun
+  condition: []
+  action:
+  - scene: scene.normal_lights
+- id: '1583818537081'
+  alias: Cold Morning
+  description: ''
+  trigger:
+  - entity_id: weather.home
+    for: 00:05
+    from: '2'
+    platform: state
+    to: '-2'
+  condition:
+  - after: sunrise
+    before: sunset
+    before_offset: -06:00:00
+    condition: sun
+  action:
+  - scene: scene.cold_weather
+- id: '1583818764634'
+  alias: Low Phone Battery - KP
+  description: ''
+  trigger:
+  - below: 50
+    device_id: 67e33560f14f480fb5f371eb906e69cc
+    domain: sensor
+    entity_id: sensor.sm_n950u_battery_level
+    for:
+      hours: 0
+      minutes: 1
+      seconds: 0
+    platform: device
+    type: battery_level
+  condition: []
+  action:
+  - scene: scene.warning_lights
+  - delay: 00:20:00
+  - above: 55
+    below: 100
+    condition: device
+    device_id: 67e33560f14f480fb5f371eb906e69cc
+    domain: sensor
+    entity_id: sensor.sm_n950u_battery_level
+    type: is_battery_level
+  - after: sunset
+    before: sunrise
+    condition: sun
+  - scene: scene.normal_lights
+  - after: sunrise
+    before: sunset
+    condition: sun
+  - scene: scene.lights_off
+- id: '1583849001519'
+  alias: Low Phone Battery - GK
+  description: ''
+  trigger:
+  - below: 25
+    device_id: a410bc6773e14a8fbd8317ed8f850df9
+    domain: sensor
+    entity_id: sensor.sm_n950u_battery_level_2
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
+    platform: device
+    type: battery_level
+  condition: []
+  action:
+  - scene: scene.warning_lights
+- id: '1583984045266'
+  alias: Remote Off
+  description: ''
+  trigger:
+  - entity_id: sensor.tradfri_remote_control
+    for: 00:00:02
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition: []
+  action:
+  - scene: scene.lights

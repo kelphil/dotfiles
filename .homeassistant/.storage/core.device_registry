@@ -1,0 +1,234 @@
+{
+    "data": {
+        "devices": [
+            {
+                "area_id": "cf158fcc55e74aa2ac5f7ae087d3db67",
+                "config_entries": [
+                    "c777a989e5254e349ba934fcdb8f14b2"
+                ],
+                "connections": [],
+                "id": "459375d9bc654ef6a19d8f1184d4e7b8",
+                "identifiers": [
+                    [
+                        "cast",
+                        "d41c3bde46eff1f076808f2742fbc792"
+                    ]
+                ],
+                "manufacturer": "Unknown manufacturer",
+                "model": "Chromecast",
+                "name": "Living Room TV",
+                "name_by_user": null,
+                "sw_version": null,
+                "via_device_id": null
+            },
+            {
+                "area_id": "cf158fcc55e74aa2ac5f7ae087d3db67",
+                "config_entries": [
+                    "c777a989e5254e349ba934fcdb8f14b2"
+                ],
+                "connections": [],
+                "id": "a3bcb4ffc92f4d77a16951f5df43f051",
+                "identifiers": [
+                    [
+                        "cast",
+                        "a4559abe75cbc78ea9de92c137d8ec23"
+                    ]
+                ],
+                "manufacturer": "Unknown manufacturer",
+                "model": "Google Home Mini",
+                "name": "Living Room speaker",
+                "name_by_user": null,
+                "sw_version": null,
+                "via_device_id": null
+            },
+            {
+                "area_id": "cf158fcc55e74aa2ac5f7ae087d3db67",
+                "config_entries": [
+                    "a58f48463be645c1bde71a35f82c5f8f"
+                ],
+                "connections": [],
+                "id": "1284d059febd4cd98cde6e427390617a",
+                "identifiers": [
+                    [
+                        "homekit_controller",
+                        "serial-number",
+                        "411915610431"
+                    ],
+                    [
+                        "homekit_controller",
+                        "accessory-id",
+                        "79:E2:31:3A:E0:7E"
+                    ]
+                ],
+                "manufacturer": "ecobee Inc.",
+                "model": "ecobee3 lite",
+                "name": "My ecobee",
+                "name_by_user": null,
+                "sw_version": "4.5.720028",
+                "via_device_id": null
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "99d12d88a89c40fd9b50ca8e6db69a4b"
+                ],
+                "connections": [],
+                "id": "67e33560f14f480fb5f371eb906e69cc",
+                "identifiers": [
+                    [
+                        "mobile_app",
+                        "69fb0144a83b60e2"
+                    ]
+                ],
+                "manufacturer": "samsung",
+                "model": "SM-N950U",
+                "name": "SM-N950U",
+                "name_by_user": "KP Phone",
+                "sw_version": "28",
+                "via_device_id": null
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "7fde400a669e45e09df3b41b939504e7"
+                ],
+                "connections": [],
+                "id": "040dc43e8c294b918e701775c114ad2e",
+                "identifiers": [
+                    [
+                        "brother",
+                        "U63886K4N561363"
+                    ]
+                ],
+                "manufacturer": "Brother",
+                "model": "HL-L2380DW",
+                "name": "HL-L2380DW",
+                "name_by_user": null,
+                "sw_version": "C1409011917",
+                "via_device_id": null
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "823a8d0f88954871b911bcf69472d08d"
+                ],
+                "connections": [],
+                "id": "4d612f36ac3845c38076c332720e3eed",
+                "identifiers": [
+                    [
+                        "wemo",
+                        "221751K01006DE"
+                    ]
+                ],
+                "manufacturer": "Belkin",
+                "model": "Socket",
+                "name": "Living Room Lamp",
+                "name_by_user": null,
+                "sw_version": null,
+                "via_device_id": null
+            },
+            {
+                "area_id": "cf158fcc55e74aa2ac5f7ae087d3db67",
+                "config_entries": [
+                    "e7684e5a2bba4792bd61e2322bea9f6b"
+                ],
+                "connections": [],
+                "id": "c8f479846be144ac8f6ce19f26226230",
+                "identifiers": [
+                    [
+                        "tradfri",
+                        "7e3a4d520440009c"
+                    ]
+                ],
+                "manufacturer": "IKEA of Sweden",
+                "model": "E1526",
+                "name": "Gateway",
+                "name_by_user": null,
+                "sw_version": "1.10.29",
+                "via_device_id": null
+            },
+            {
+                "area_id": "cf158fcc55e74aa2ac5f7ae087d3db67",
+                "config_entries": [
+                    "e7684e5a2bba4792bd61e2322bea9f6b"
+                ],
+                "connections": [],
+                "id": "2daeec135e4a42ecb185f2f2358250bc",
+                "identifiers": [
+                    [
+                        "tradfri",
+                        65536
+                    ]
+                ],
+                "manufacturer": "IKEA of Sweden",
+                "model": "TRADFRI remote control",
+                "name": "TRADFRI remote control",
+                "name_by_user": null,
+                "sw_version": "2.3.014",
+                "via_device_id": "c8f479846be144ac8f6ce19f26226230"
+            },
+            {
+                "area_id": "cf158fcc55e74aa2ac5f7ae087d3db67",
+                "config_entries": [
+                    "e7684e5a2bba4792bd61e2322bea9f6b"
+                ],
+                "connections": [],
+                "id": "ccea27c00fdb4ce6b3a0a1c93b17c001",
+                "identifiers": [
+                    [
+                        "tradfri",
+                        65538
+                    ]
+                ],
+                "manufacturer": "IKEA of Sweden",
+                "model": "TRADFRI bulb E26 CWS opal 600lm",
+                "name": "Living Room Light Right",
+                "name_by_user": null,
+                "sw_version": "1.3.009",
+                "via_device_id": "c8f479846be144ac8f6ce19f26226230"
+            },
+            {
+                "area_id": "cf158fcc55e74aa2ac5f7ae087d3db67",
+                "config_entries": [
+                    "e7684e5a2bba4792bd61e2322bea9f6b"
+                ],
+                "connections": [],
+                "id": "718664e89df4449aa3fd50a4d88b3053",
+                "identifiers": [
+                    [
+                        "tradfri",
+                        65537
+                    ]
+                ],
+                "manufacturer": "IKEA of Sweden",
+                "model": "TRADFRI bulb E26 CWS opal 600lm",
+                "name": "Living Room Light Left",
+                "name_by_user": null,
+                "sw_version": "1.3.009",
+                "via_device_id": "c8f479846be144ac8f6ce19f26226230"
+            },
+            {
+                "area_id": null,
+                "config_entries": [
+                    "355875a0dc3b44dea3acdbdd4cbedff0"
+                ],
+                "connections": [],
+                "id": "a410bc6773e14a8fbd8317ed8f850df9",
+                "identifiers": [
+                    [
+                        "mobile_app",
+                        "48c3373459466819"
+                    ]
+                ],
+                "manufacturer": "samsung",
+                "model": "SM-N950U",
+                "name": "SM-N950U",
+                "name_by_user": "GK Phone",
+                "sw_version": "28",
+                "via_device_id": null
+            }
+        ]
+    },
+    "key": "core.device_registry",
+    "version": 1
+}

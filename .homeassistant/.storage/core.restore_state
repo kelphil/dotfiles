@@ -1,0 +1,239 @@
+{
+    "data": [
+        {
+            "last_seen": "2020-03-12T18:22:20.005914+00:00",
+            "state": {
+                "attributes": {
+                    "altitude": 158.0,
+                    "battery_level": 77,
+                    "course": 0,
+                    "friendly_name": "KP Phone",
+                    "gps_accuracy": 14,
+                    "latitude": 43.8389285,
+                    "longitude": -79.3875195,
+                    "source_type": "gps",
+                    "speed": 0,
+                    "vertical_accuracy": 4
+                },
+                "context": {
+                    "id": "670822a27fa14043850759386657b1e6",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "device_tracker.sm_n950u",
+                "last_changed": "2020-03-12T18:21:36.170442+00:00",
+                "last_updated": "2020-03-12T18:21:36.170442+00:00",
+                "state": "home"
+            }
+        },
+        {
+            "last_seen": "2020-03-12T18:22:20.005914+00:00",
+            "state": {
+                "attributes": {
+                    "altitude": 158.0,
+                    "battery_level": 65,
+                    "course": 0,
+                    "friendly_name": "GK Phone",
+                    "gps_accuracy": 14,
+                    "latitude": 43.8389148,
+                    "longitude": -79.3875004,
+                    "source_type": "gps",
+                    "speed": 0,
+                    "vertical_accuracy": 4
+                },
+                "context": {
+                    "id": "11af9cba75bd455aa99b9eee9c94e94b",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "device_tracker.sm_n950u_2",
+                "last_changed": "2020-03-12T18:21:10.918883+00:00",
+                "last_updated": "2020-03-12T18:21:10.918883+00:00",
+                "state": "home"
+            }
+        },
+        {
+            "last_seen": "2020-03-12T18:22:20.005914+00:00",
+            "state": {
+                "attributes": {
+                    "editable": true,
+                    "friendly_name": "Kelvin",
+                    "gps_accuracy": 14,
+                    "id": "kelvin",
+                    "latitude": 43.8389285,
+                    "longitude": -79.3875195,
+                    "source": "device_tracker.sm_n950u",
+                    "user_id": "4babf321d19b4d2ab564ee5b1c128474"
+                },
+                "context": {
+                    "id": "0e24b86c15e94856b669ed4b95879f79",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "person.kelvin",
+                "last_changed": "2020-03-11T02:34:15.080136+00:00",
+                "last_updated": "2020-03-12T18:21:36.176787+00:00",
+                "state": "home"
+            }
+        },
+        {
+            "last_seen": "2020-03-12T18:22:20.005914+00:00",
+            "state": {
+                "attributes": {
+                    "editable": true,
+                    "friendly_name": "Gincy",
+                    "gps_accuracy": 14,
+                    "id": "gincy",
+                    "latitude": 43.8389148,
+                    "longitude": -79.3875004,
+                    "source": "device_tracker.sm_n950u_2",
+                    "user_id": "cea348f38fcc489ba7b18382e249a30b"
+                },
+                "context": {
+                    "id": "96fa259a97d94eb1941cc604c003836b",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "person.gincy",
+                "last_changed": "2020-03-11T02:34:27.079310+00:00",
+                "last_updated": "2020-03-12T18:21:10.923177+00:00",
+                "state": "home"
+            }
+        },
+        {
+            "last_seen": "2020-03-12T18:22:20.005914+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Lights at Sunset",
+                    "id": "1583818311596",
+                    "last_triggered": "2020-03-11T23:20:56.074498+00:00"
+                },
+                "context": {
+                    "id": "e2ca19f92bbf43789fbe62851549398d",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.new_automation_3",
+                "last_changed": "2020-03-12T14:18:17.590316+00:00",
+                "last_updated": "2020-03-12T14:18:17.590316+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2020-03-12T18:22:20.005914+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Colorful Lights When Reaching Home",
+                    "id": "1583818259212",
+                    "last_triggered": "2020-03-11T02:34:31.028283+00:00"
+                },
+                "context": {
+                    "id": "0ca9e25b7bee4643b07275ba5faf1d44",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.new_automation_2",
+                "last_changed": "2020-03-12T14:18:17.592406+00:00",
+                "last_updated": "2020-03-12T14:18:17.592406+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2020-03-12T18:22:20.005914+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Remote Off",
+                    "id": "1583984045266",
+                    "last_triggered": null
+                },
+                "context": {
+                    "id": "2a94094c690447a0abe3f1779c86b857",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.new_automation_5",
+                "last_changed": "2020-03-12T14:18:17.593557+00:00",
+                "last_updated": "2020-03-12T14:18:17.593557+00:00",
+                "state": "off"
+            }
+        },
+        {
+            "last_seen": "2020-03-12T18:22:20.005914+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Cold Morning",
+                    "id": "1583818537081",
+                    "last_triggered": null
+                },
+                "context": {
+                    "id": "ea081313dcf94a30b45deb4ca6139d19",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.new_automation_4",
+                "last_changed": "2020-03-12T14:18:17.595457+00:00",
+                "last_updated": "2020-03-12T14:18:17.595457+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2020-03-12T18:22:20.005914+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Low Phone Battery - GK",
+                    "id": "1583849001519",
+                    "last_triggered": "2020-03-12T04:23:34.061931+00:00"
+                },
+                "context": {
+                    "id": "80727f81b0e044a3985ed835b03b55ee",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.low_phone_battery_gk",
+                "last_changed": "2020-03-12T14:18:17.598439+00:00",
+                "last_updated": "2020-03-12T14:18:17.598439+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2020-03-12T18:22:20.005914+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Confirmed Corona Virus Cases",
+                    "id": "1583815338378",
+                    "last_triggered": "2020-03-10T05:22:51.522023+00:00"
+                },
+                "context": {
+                    "id": "205af8dd7106410d99d13481298babc6",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "automation.new_automation",
+                "last_changed": "2020-03-12T14:18:17.601042+00:00",
+                "last_updated": "2020-03-12T14:18:17.601042+00:00",
+                "state": "on"
+            }
+        },
+        {
+            "last_seen": "2020-03-12T18:22:20.005914+00:00",
+            "state": {
+                "attributes": {
+                    "friendly_name": "Low Phone Battery - KP",
+                    "id": "1583818764634",
+                    "last_triggered": "2020-03-12T14:59:27.335595+00:00"
+                },
+                "context": {
+                    "id": "62a5d064c55e4a24bde3045c8ed2c834",
+                    "parent_id": "f0d3f99b94824d68ac9ec9bc60e81866",
+                    "user_id": null
+                },
+                "entity_id": "automation.low_phone_battery",
+                "last_changed": "2020-03-12T14:18:17.604122+00:00",
+                "last_updated": "2020-03-12T14:59:27.336153+00:00",
+                "state": "on"
+            }
+        }
+    ],
+    "key": "core.restore_state",
+    "version": 1
+}

@@ -1,0 +1,180 @@
+{
+    "data": {
+        "binary_sensor": {},
+        "deleted_ids": [
+            "b6313c81c35075a109e8349d4248fa9061de12df369b8624c113c58b401e971f"
+        ],
+        "sensor": {
+            "73033782e5d4f4606bdc82e111dc8873a0bda39359a19e87a1154a25a8cca34a_battery_level": {
+                "added": true,
+                "attributes": {
+                    "charger_type": "N/A",
+                    "is_charging": false
+                },
+                "device_class": "battery",
+                "icon": "mdi:battery-70",
+                "name": "Battery Level",
+                "state": 75,
+                "type": "sensor",
+                "unique_id": "battery_level",
+                "unit_of_measurement": "%",
+                "webhook_id": "73033782e5d4f4606bdc82e111dc8873a0bda39359a19e87a1154a25a8cca34a"
+            },
+            "73033782e5d4f4606bdc82e111dc8873a0bda39359a19e87a1154a25a8cca34a_geocoded_location": {
+                "added": true,
+                "attributes": {
+                    "Administrative Area": "Ontario",
+                    "Country": "Canada",
+                    "ISO Country Code": "CA",
+                    "Locality": "Markham",
+                    "Location": [
+                        43.838952,
+                        -79.3874072
+                    ],
+                    "Postal Code": "L3T 7W1",
+                    "Sub Administrative Area": "Regional Municipality of York",
+                    "Sub Locality": null,
+                    "Sub Thoroughfare": "10",
+                    "Thoroughfare": "Leitchcroft Crescent"
+                },
+                "icon": "mdi:map",
+                "name": "Geocoded Location",
+                "state": "10 Leitchcroft Crescent, Markham, ON L3T 7W1, Canada",
+                "type": "sensor",
+                "unique_id": "geocoded_location",
+                "webhook_id": "73033782e5d4f4606bdc82e111dc8873a0bda39359a19e87a1154a25a8cca34a"
+            },
+            "73033782e5d4f4606bdc82e111dc8873a0bda39359a19e87a1154a25a8cca34a_wifi_connection": {
+                "added": true,
+                "attributes": {
+                    "bssid": "48:f8:b3:c0:3b:76",
+                    "frequency": 2417,
+                    "ip_address": "10.163.23.118",
+                    "is_hidden": false,
+                    "link_speed": 144,
+                    "signal_level": -35
+                },
+                "icon": "mdi:wifi-strength-3",
+                "name": "Wifi Connection",
+                "state": "BlackHawk",
+                "type": "sensor",
+                "unique_id": "wifi_connection",
+                "webhook_id": "73033782e5d4f4606bdc82e111dc8873a0bda39359a19e87a1154a25a8cca34a"
+            },
+            "ac40bfdf1e474f8924f2e35bffb56fec24c5487ff29334a5e327398fff60d882_battery_level": {
+                "added": true,
+                "attributes": {
+                    "charger_type": "N/A",
+                    "is_charging": false
+                },
+                "device_class": "battery",
+                "icon": "mdi:battery-60",
+                "name": "Battery Level",
+                "state": 64,
+                "type": "sensor",
+                "unique_id": "battery_level",
+                "unit_of_measurement": "%",
+                "webhook_id": "ac40bfdf1e474f8924f2e35bffb56fec24c5487ff29334a5e327398fff60d882"
+            },
+            "ac40bfdf1e474f8924f2e35bffb56fec24c5487ff29334a5e327398fff60d882_geocoded_location": {
+                "added": true,
+                "attributes": {
+                    "Administrative Area": "Ontario",
+                    "Country": "Canada",
+                    "ISO Country Code": "CA",
+                    "Locality": "Markham",
+                    "Location": [
+                        43.838952,
+                        -79.3874072
+                    ],
+                    "Postal Code": "L3T 7W1",
+                    "Sub Administrative Area": "Regional Municipality of York",
+                    "Sub Locality": null,
+                    "Sub Thoroughfare": "10",
+                    "Thoroughfare": "Leitchcroft Crescent"
+                },
+                "icon": "mdi:map",
+                "name": "Geocoded Location",
+                "state": "10 Leitchcroft Crescent, Markham, ON L3T 7W1, Canada",
+                "type": "sensor",
+                "unique_id": "geocoded_location",
+                "webhook_id": "ac40bfdf1e474f8924f2e35bffb56fec24c5487ff29334a5e327398fff60d882"
+            },
+            "ac40bfdf1e474f8924f2e35bffb56fec24c5487ff29334a5e327398fff60d882_wifi_connection": {
+                "added": true,
+                "attributes": {
+                    "bssid": "48:f8:b3:c0:3b:76",
+                    "frequency": 2417,
+                    "ip_address": "10.163.23.136",
+                    "is_hidden": false,
+                    "link_speed": 5,
+                    "signal_level": -49
+                },
+                "icon": "mdi:wifi-strength-3",
+                "name": "Wifi Connection",
+                "state": "BlackHawk",
+                "type": "sensor",
+                "unique_id": "wifi_connection",
+                "webhook_id": "ac40bfdf1e474f8924f2e35bffb56fec24c5487ff29334a5e327398fff60d882"
+            },
+            "b6313c81c35075a109e8349d4248fa9061de12df369b8624c113c58b401e971f_battery_level": {
+                "added": true,
+                "attributes": {
+                    "charger_type": "N/A",
+                    "is_charging": false
+                },
+                "device_class": "battery",
+                "icon": "mdi:battery-30",
+                "name": "Battery Level",
+                "state": 38,
+                "type": "sensor",
+                "unique_id": "battery_level",
+                "unit_of_measurement": "%",
+                "webhook_id": "b6313c81c35075a109e8349d4248fa9061de12df369b8624c113c58b401e971f"
+            },
+            "b6313c81c35075a109e8349d4248fa9061de12df369b8624c113c58b401e971f_geocoded_location": {
+                "added": true,
+                "attributes": {
+                    "Administrative Area": "Ontario",
+                    "Country": "Canada",
+                    "ISO Country Code": "CA",
+                    "Locality": "Markham",
+                    "Location": [
+                        43.8388816,
+                        -79.3875365
+                    ],
+                    "Postal Code": "L3T 7W1",
+                    "Sub Administrative Area": "Regional Municipality of York",
+                    "Sub Locality": null,
+                    "Sub Thoroughfare": "12",
+                    "Thoroughfare": "Leitchcroft Crescent"
+                },
+                "icon": "mdi:map",
+                "name": "Geocoded Location",
+                "state": "12 Leitchcroft Crescent, Markham, ON L3T 7W1, Canada",
+                "type": "sensor",
+                "unique_id": "geocoded_location",
+                "webhook_id": "b6313c81c35075a109e8349d4248fa9061de12df369b8624c113c58b401e971f"
+            },
+            "b6313c81c35075a109e8349d4248fa9061de12df369b8624c113c58b401e971f_wifi_connection": {
+                "added": true,
+                "attributes": {
+                    "bssid": "48:f8:b3:c0:3b:76",
+                    "frequency": 2442,
+                    "ip_address": "10.163.23.136",
+                    "is_hidden": false,
+                    "link_speed": 86,
+                    "signal_level": -55
+                },
+                "icon": "mdi:wifi-strength-3",
+                "name": "Wifi Connection",
+                "state": "BlackHawk",
+                "type": "sensor",
+                "unique_id": "wifi_connection",
+                "webhook_id": "b6313c81c35075a109e8349d4248fa9061de12df369b8624c113c58b401e971f"
+            }
+        }
+    },
+    "key": "mobile_app",
+    "version": 1
+}

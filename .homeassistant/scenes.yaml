@@ -1,0 +1,200 @@
+- id: '1583816718093'
+  name: Colorful Lights
+  entities:
+    light.living_room_light_left:
+      brightness: 254
+      friendly_name: Living Room Light Left
+      hs_color:
+      - 299.992
+      - 100
+      rgb_color:
+      - 254
+      - 0
+      - 255
+      state: 'on'
+      supported_features: 49
+      xy_color:
+      - 0.384
+      - 0.154
+    light.living_room_light_right:
+      brightness: 252
+      friendly_name: Living Room Light Right
+      hs_color:
+      - 254.997
+      - 100
+      rgb_color:
+      - 63
+      - 0
+      - 255
+      state: 'on'
+      supported_features: 49
+      xy_color:
+      - 0.157
+      - 0.05
+    switch.living_room_lamp:
+      friendly_name: Living Room Lamp
+      state: 'off'
+- id: '1583817313166'
+  name: Normal Lights
+  entities:
+    light.living_room_light_left:
+      brightness: 254
+      friendly_name: Living Room Light Left
+      hs_color:
+      - 29.999
+      - 57.142
+      rgb_color:
+      - 255
+      - 182
+      - 109
+      state: 'on'
+      supported_features: 49
+      xy_color:
+      - 0.491
+      - 0.39
+    light.living_room_light_right:
+      brightness: 254
+      friendly_name: Living Room Light Right
+      hs_color:
+      - 29.999
+      - 57.142
+      rgb_color:
+      - 255
+      - 182
+      - 109
+      state: 'on'
+      supported_features: 49
+      xy_color:
+      - 0.491
+      - 0.39
+    switch.living_room_lamp:
+      friendly_name: Living Room Lamp
+      restored: true
+      state: unavailable
+      supported_features: 0
+- id: '1583817750997'
+  name: Warning Lights
+  entities:
+    light.living_room_light_left:
+      brightness: 254
+      friendly_name: Living Room Light Left
+      hs_color:
+      - 360
+      - 100
+      rgb_color:
+      - 255
+      - 0
+      - 0
+      state: 'on'
+      supported_features: 49
+      xy_color:
+      - 0.701
+      - 0.299
+    light.living_room_light_right:
+      brightness: 254
+      friendly_name: Living Room Light Right
+      hs_color:
+      - 360
+      - 100
+      rgb_color:
+      - 255
+      - 0
+      - 0
+      state: 'on'
+      supported_features: 49
+      xy_color:
+      - 0.701
+      - 0.299
+    switch.living_room_lamp:
+      friendly_name: Living Room Lamp
+      state: 'off'
+- id: '1583818648460'
+  name: Cold Weather
+  entities:
+    light.living_room_light_left:
+      brightness: 254
+      friendly_name: Living Room Light Left
+      hs_color:
+      - 224.998
+      - 85.714
+      rgb_color:
+      - 36
+      - 91
+      - 255
+      state: 'on'
+      supported_features: 49
+      xy_color:
+      - 0.145
+      - 0.094
+    light.living_room_light_right:
+      brightness: 254
+      friendly_name: Living Room Light Right
+      hs_color:
+      - 224.998
+      - 85.714
+      rgb_color:
+      - 36
+      - 91
+      - 255
+      state: 'on'
+      supported_features: 49
+      xy_color:
+      - 0.145
+      - 0.094
+    switch.living_room_lamp:
+      friendly_name: Living Room Lamp
+      state: 'off'
+- id: '1583819921117'
+  name: Dim Lights
+  entities:
+    light.living_room_light_left:
+      brightness: 1
+      friendly_name: Living Room Light Left
+      hs_color:
+      - 29.999
+      - 57.142
+      rgb_color:
+      - 255
+      - 182
+      - 109
+      state: 'on'
+      supported_features: 49
+      xy_color:
+      - 0.491
+      - 0.39
+    light.living_room_light_right:
+      brightness: 1
+      friendly_name: Living Room Light Right
+      hs_color:
+      - 29.999
+      - 57.142
+      rgb_color:
+      - 255
+      - 182
+      - 109
+      state: 'on'
+      supported_features: 49
+      xy_color:
+      - 0.491
+      - 0.39
+    switch.living_room_lamp:
+      friendly_name: Living Room Lamp
+      restored: true
+      state: unavailable
+      supported_features: 0
+- id: '1583901610365'
+  name: Lights Off
+  entities:
+    light.living_room_light_left:
+      friendly_name: Living Room Light Left
+      state: 'off'
+      supported_features: 49
+    light.living_room_light_right:
+      friendly_name: Living Room Light Right
+      state: 'off'
+      supported_features: 49
+    switch.living_room_lamp:
+      friendly_name: Living Room Lamp
+      restored: true
+      state: unavailable
+      supported_features: 0
