@@ -7,8 +7,8 @@
 #+------------------------------------------------------------------------------------------
 # VNC Server by kphilip
 #+------------------------------------------------------------------------------------------
-vncserver :1 -nolock -noreset -depth 24 -geometry 3820x1040
-vncconfig -display :1 -nowin &
+#vncserver :1 -nolock -noreset -depth 24 -geometry 3820x1040
+#vncconfig -display :1 -nowin &
 
 #+------------------------------------------------------------------------------------------
 # ENV Setup Paths
@@ -47,11 +47,6 @@ set visible-stats on
 # http://perlgeek.de/en/article/set-up-a-clean-utf8-environment
 export LANG=en_US.UTF-8
 export PYTHONIOENCODING='utf-8'
-
-#+------------------------------------------------------------------------------------------
-# Source PE BASHRC File
-#+------------------------------------------------------------------------------------------
-source $DOTFILES/.bashrc.pe
 
 #+------------------------------------------------------------------------------------------
 # Source Master Aliases File
