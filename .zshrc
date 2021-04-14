@@ -4,9 +4,9 @@
 export DOTFILES=$HOME/.env
 source $DOTFILES/.zshrc.local
 
-if [ -f ".zshrc.local" ]
+if [ -f $HOME/.zshrc.local ]
 then
-    source .zshrc.local
+    source $HOME/.zshrc.local
 fi
 
 #+------------------------------------------------------------------------------------------
