@@ -16,139 +16,95 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-#+------------------------------------------------------------------------------------------
-# Oh My ZSH Theme
-#+------------------------------------------------------------------------------------------
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
-#ZSH_THEME="avit"
-#ZSH_THEME="agnoster"
+#+---------------------------------------------+#
+# Local ZSHRC File from User
+#+---------------------------------------------+#
+export PATH=$PATH:$HOME/.local/bin
+ 
+#+---------------------------------------------+#
+# Plugins
+#+---------------------------------------------+#
+plugins=(zsh-autosuggestions)
 
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
-#+------------------------------------------------------------------------------------------
-# Ph My ZSH Settings
-#+------------------------------------------------------------------------------------------
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-HIST_STAMPS="yyyy-mm-dd"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-#+------------------------------------------------------------------------------------------
-# ZSH Plugins
-#+------------------------------------------------------------------------------------------
-# Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  git
-  zsh-syntax-highlighting
-  zsh-autosuggestions
-  fasd
-)
-
-source $ZSH/oh-my-zsh.sh
-
-#+------------------------------------------------------------------------------------------
-# User configuration
-#+------------------------------------------------------------------------------------------
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-#+------------------------------------------------------------------------------------------
-# Editor
-#+------------------------------------------------------------------------------------------
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-#+------------------------------------------------------------------------------------------
-# SSH Setup
-#+------------------------------------------------------------------------------------------
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-
-#+------------------------------------------------------------------------------------------
+#+---------------------------------------------+#
 # Allow Background Processes
-#+------------------------------------------------------------------------------------------
+#+---------------------------------------------+#
 setopt NOHUP
 
-#+------------------------------------------------------------------------------------------
+#+---------------------------------------------+#
+# Powerline configuration
+#+---------------------------------------------+#
+if [ -f $HOME/.local/lib/python3.8/site-packages/powerline/bindings/bash/powerline.sh ]; then
+    $HOME/.local/bin/powerline-daemon -q
+    POWERLINE_BASH_CONTINUATION=1
+    POWERLINE_BASH_SELECT=1
+    source $HOME/.local/lib/python3.8/site-packages/powerline/bindings/bash/powerline.sh
+fi
+
+#+---------------------------------------------+#
+# User Config
+#+---------------------------------------------+#
+export EDITOR='vim'
+
+#+---------------------------------------------+#
 # Source Master Aliases File
-#+------------------------------------------------------------------------------------------
+#+---------------------------------------------+#
 source $DOTFILES/.alias
+
+#+---------------------------------------------+#
+# General Aliases
+#+---------------------------------------------+#
+alias c='clear'
+alias l='ls -lrath'
+alias v='vim'
+alias pbcopy=’/usr/bin/xclip -selection clipboard’
+alias pbpaste=’/usr/bin/xclip -selection clipboard -o’
 
 #+---------------------------------------------+#
 # Command Completion
 #+---------------------------------------------+#
 source $DOTFILES/kubectl.completion.inc
 
-#+------------------------------------------------------------------------------------------
-# Directory Colors
-#+------------------------------------------------------------------------------------------
-export LSCOLORS='exfxcxdxCxegedabagacad'
+#+---------------------------------------------+#
+# Azure Container Registry
+#+---------------------------------------------+#
+source ~/.az.acr
 
-#+------------------------------------------------------------------------------------------
-# UNIX Promt
-#+------------------------------------------------------------------------------------------
-#PS1='${ret_status} %{$fg[cyan]%}%0~%{$reset_color%} $(git_prompt_info): '
+#+---------------------------------------------+#
+# GitLab Token
+#+---------------------------------------------+#
+export GITLAB_TOKEN=sHgstN4Wy8UW9ABmvbNB
 
-#+------------------------------------------------------------------------------------------
+#+---------------------------------------------+#
+# Flux Completion
+#+---------------------------------------------+#
+command -v flux >/dev/null && . <(flux completion zsh) && compdef _flux flux
+
+#+---------------------------------------------+#
+# Kubernetes Aliases
+#+---------------------------------------------+#
+export KUBECONFIG=/mnt/c/Users/kephilip/.kube/config
+export KUBERNETES_NAMESPACE='houston'
+export HOUSTON_POD=$(kubectl get pod -n houston -l app=houston-cli -o jsonpath="{.items[0].metadata.name}")
+alias k='kubectl'
+alias ka='kubectl apply -f'
+alias kc='kubectl create -f'
+alias kd='kubectl delete -f'
+alias kdeps='kubectl get deployments -n $KUBERNETES_NAMESPACE'
+alias kevents='kubectl get events -n $KUBERNETES_NAMESPACE'
+alias klogs="kubectl -n $KUBERNETES_NAMESPACE logs -f -lapp=houston-app --all-containers --prefix --timestamps --since=30m"
+alias kall='kubectl get all -n $KUBERNETES_NAMESPACE'
+alias kpods='kubectl get pods -n $KUBERNETES_NAMESPACE'
+alias kingress='kubectl get ingress -n $KUBERNETES_NAMESPACE'
+alias ksvc='kubectl get svc -n $KUBERNETES_NAMESPACE'
+alias kshell='kubectl -n $KUBERNETES_NAMESPACE exec --stdin --tty $HOUSTON_POD -- /bin/bash'
+function kscale() {
+  kubectl scale -n $KUBERNETES_NAMESPACE deployment $1 --replicas=$2
+}
+function kimage() {
+  kubectl -n $KUBERNETES_NAMESPACE describe deploy $1 | grep Image: | sed 's/Image://g' | awk '{print $1}'
+}
+alias ktoken='kubectl -n kubernetes-dashboard get secret $(kubectl -n kubernetes-dashboard get sa/default -o jsonpath="{.secrets[0].name}") -o go-template="{{.data.token | base64decode}}"'
+function vaml() {
+  vim -R -c 'set syntax=yaml' -;
+}
