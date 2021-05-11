@@ -81,11 +81,6 @@ source $DOTFILES/kubectl.completion.inc
 source ~/.az.acr
 
 #+---------------------------------------------+#
-# GitLab Token
-#+---------------------------------------------+#
-export GITLAB_TOKEN=sHgstN4Wy8UW9ABmvbNB
-
-#+---------------------------------------------+#
 # Flux Completion
 #+---------------------------------------------+#
 command -v flux >/dev/null && . <(flux completion zsh) && compdef _flux flux
