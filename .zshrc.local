@@ -13,19 +13,29 @@ export INCLUDES=$HOME/.local/share/.env
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+#+------------------------------------------------------------------------------------------
+# Oh My ZSH Theme
+#+------------------------------------------------------------------------------------------
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+
+# ZSH Theme
+ZSH_THEME="robbyrussell"
+#ZSH_THEME="avit"
+#ZSH_THEME="agnoster"
+
+#+---------------------------------------------+#
+# Plugins
+#+---------------------------------------------+#
+plugins=(zsh-autosuggestions)
+
+source $ZSH/oh-my-zsh.sh
 
 #+---------------------------------------------+#
 # Local ZSHRC File from User
 #+---------------------------------------------+#
 export PATH=$PATH:$HOME/.local/bin
  
-#+---------------------------------------------+#
-# Plugins
-#+---------------------------------------------+#
-plugins=(zsh-autosuggestions)
-
 #+---------------------------------------------+#
 # Allow Background Processes
 #+---------------------------------------------+#
