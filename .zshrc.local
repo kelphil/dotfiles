@@ -88,31 +88,3 @@ source ~/.az.acr
 #+---------------------------------------------+#
 command -v flux >/dev/null && . <(flux completion zsh) && compdef _flux flux
 
-#+---------------------------------------------+#
-# Kubernetes Aliases
-#+---------------------------------------------+#
-export KUBECONFIG=/mnt/c/Users/kephilip/.kube/config
-export KUBERNETES_NAMESPACE='houston'
-export HOUSTON_POD=$(kubectl get pod -n houston -l app=houston-cli -o jsonpath="{.items[0].metadata.name}")
-alias k='kubectl'
-alias ka='kubectl apply -f'
-alias kc='kubectl create -f'
-alias kd='kubectl delete -f'
-alias kdeps='kubectl get deployments -n $KUBERNETES_NAMESPACE'
-alias kevents='kubectl get events -n $KUBERNETES_NAMESPACE'
-alias klogs="kubectl -n $KUBERNETES_NAMESPACE logs -f -lapp=houston-app --all-containers --prefix --timestamps --since=30m"
-alias kall='kubectl get all -n $KUBERNETES_NAMESPACE'
-alias kpods='kubectl get pods -n $KUBERNETES_NAMESPACE'
-alias kingress='kubectl get ingress -n $KUBERNETES_NAMESPACE'
-alias ksvc='kubectl get svc -n $KUBERNETES_NAMESPACE'
-alias kshell='kubectl -n $KUBERNETES_NAMESPACE exec --stdin --tty $HOUSTON_POD -- /bin/bash'
-function kscale() {
-  kubectl scale -n $KUBERNETES_NAMESPACE deployment $1 --replicas=$2
-}
-function kimage() {
-  kubectl -n $KUBERNETES_NAMESPACE describe deploy $1 | grep Image: | sed 's/Image://g' | awk '{print $1}'
-}
-alias ktoken='kubectl -n kubernetes-dashboard get secret $(kubectl -n kubernetes-dashboard get sa/default -o jsonpath="{.secrets[0].name}") -o go-template="{{.data.token | base64decode}}"'
-function vaml() {
-  vim -R -c 'set syntax=yaml' -;
-}
