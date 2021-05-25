@@ -2,6 +2,7 @@
 " Vundle Package Manager Settings
 "--------------------------------------------------------------
 set nocompatible              " be iMproved, required
+set number
 set relativenumber
 filetype off                  " required
 
@@ -38,6 +39,8 @@ Plugin 'itchyny/lightline.vim'
 " Plugin 'vim-airline/vim-airline'
 " Plugin 'vim-airline/vim-airline-themes'
 " Plugin 'airblade/vim-gitgutter'
+Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plugin 'junegunn/fzf.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
