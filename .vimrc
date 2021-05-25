@@ -7,6 +7,8 @@ set relativenumber
 set scrolloff=8
 set paste
 set pastetoggle=<F10>
+set noswapfile
+set nobackup
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
