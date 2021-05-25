@@ -34,8 +34,9 @@ Plugin 'VundleVim/Vundle.vim'
 " " All of your Plugins must be added before the following line
 Plugin 'gruvbox-community/gruvbox'
 " Plugin 'morhetz/gruvbox'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plugin 'itchyny/lightline.vim'
+" Plugin 'vim-airline/vim-airline'
+" Plugin 'vim-airline/vim-airline-themes'
 " Plugin 'airblade/vim-gitgutter'
 
 call vundle#end()            " required
