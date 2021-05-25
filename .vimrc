@@ -9,6 +9,7 @@ set paste
 set pastetoggle=<F10>
 set noswapfile
 set nobackup
+set signcolumn=yes
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
