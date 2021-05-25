@@ -32,7 +32,8 @@ Plugin 'VundleVim/Vundle.vim'
 " " Plugin 'ascenator/L9', {'name': 'newL9'}
 "
 " " All of your Plugins must be added before the following line
-Plugin 'morhetz/gruvbox'
+Plugin 'gruvbox-community/gruvbox'
+" Plugin 'morhetz/gruvbox'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 " Plugin 'airblade/vim-gitgutter'
