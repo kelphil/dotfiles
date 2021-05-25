@@ -5,6 +5,7 @@ set nocompatible              " be iMproved, required
 set number
 set relativenumber
 set scrolloff=8
+set nowrap
 set paste
 set pastetoggle=<F10>
 set noswapfile
