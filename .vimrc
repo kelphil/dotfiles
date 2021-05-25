@@ -47,6 +47,7 @@ Plugin 'itchyny/lightline.vim'
 " Plugin 'airblade/vim-gitgutter'
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
+Plugin 'tpope/vim-fugitive'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
