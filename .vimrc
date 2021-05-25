@@ -2,6 +2,7 @@
 " Vundle Package Manager Settings
 "--------------------------------------------------------------
 set nocompatible              " be iMproved, required
+set relativenumber
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
