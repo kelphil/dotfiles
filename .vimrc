@@ -4,6 +4,9 @@
 set nocompatible              " be iMproved, required
 set number
 set relativenumber
+set scrolloff=8
+set paste
+set pastetoggle=<F10>
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -59,10 +62,13 @@ filetype plugin indent on    " required
 "--------------------------------------------------------------
 " User Settings by Kelvin Philip
 "--------------------------------------------------------------
+
+nnoremap <C-f> :Files<Cr>
+nnoremap <C-p> :GFiles<Cr>
+
 if filereadable(glob("$DOTFILES/.vimrc.local")) 
     source $DOTFILES/.vimrc.local
     source $DOTFILES/.vimrc.kp
 endif
-
 
 "--------------------------------------------------------------
