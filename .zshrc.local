@@ -73,9 +73,6 @@ source $DOTFILES/.alias
 #+---------------------------------------------+#
 # General Aliases
 #+---------------------------------------------+#
-alias c='clear'
-alias l='ls -lrath'
-alias v='vim'
 alias pbcopy=’/usr/bin/xclip -selection clipboard’
 alias pbpaste=’/usr/bin/xclip -selection clipboard -o’
 
