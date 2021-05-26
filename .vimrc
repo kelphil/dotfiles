@@ -12,7 +12,7 @@
 set nocompatible              " be iMproved, required
 set noerrorbells
 set smartindent
-set termguicolors
+" set termguicolors
 set number
 set relativenumber
 set scrolloff=8
