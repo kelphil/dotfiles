@@ -24,6 +24,8 @@ set nobackup
 set signcolumn=yes
 set hlsearch
 set incsearch
+set path=.,,**
+
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -98,6 +100,10 @@ nnoremap <silent> <Leader>H :Helptags<CR>
 nnoremap <silent> <Leader>hh :History<CR>
 nnoremap <silent> <Leader>h: :History:<CR>
 nnoremap <silent> <Leader>h/ :History/<CR> 
+
+" TABS
+nnoremap <silent> <Tab> gt
+nnoremap <silent> <S-Tab> gT
 
 if filereadable(glob("$DOTFILES/.vimrc.local")) 
     source $DOTFILES/.vimrc.local
