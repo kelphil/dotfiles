@@ -406,7 +406,7 @@ set -g @continuum-restore 'on'
 # # /!\ do not remove the previous line
 
 # -- user overrides ------------------------------------------------------------
-set-option -gw xterm-keys on
+# set-option -gw xterm-keys on
 
 # split current window horizontally
 bind - split-window -v
@@ -428,5 +428,3 @@ bind -n S-Left  previous-window
 bind -n S-Right next-window
 
 bind -n C-t last-window        # move to last active window
-
-set-environment -g 'IGNOREEOF' 2
