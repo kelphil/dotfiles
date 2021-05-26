@@ -11,6 +11,8 @@ set pastetoggle=<F10>
 set noswapfile
 set nobackup
 set signcolumn=yes
+set hlsearch
+set incsearch
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -49,6 +51,7 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-vinegar'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -68,7 +71,7 @@ filetype plugin indent on    " required
 " User Settings by Kelvin Philip
 "--------------------------------------------------------------
 
-let mapleader=" "
+let mapleader=","
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " PLUGIN: FZF
