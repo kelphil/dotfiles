@@ -24,6 +24,9 @@ set nobackup
 set signcolumn=yes
 set hlsearch
 set incsearch
+set cursorline
+set spelllang=en_us
+set spell
 set path=.,,**
 
 filetype off                  " required
@@ -104,6 +107,7 @@ nnoremap <silent> <Leader>h/ :History/<CR>
 " TABS
 nnoremap <silent> <Tab> gt
 nnoremap <silent> <S-Tab> gT
+
 
 if filereadable(glob("$DOTFILES/.vimrc.local")) 
     source $DOTFILES/.vimrc.local
