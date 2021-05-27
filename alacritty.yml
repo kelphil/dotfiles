@@ -82,6 +82,7 @@ cursor:
   blink-interval: 750
   unfocused_hollow: true
 
-  # key_bindings:
+key_bindings:
+  - { key: Return,   mods: Alt,           action: ToggleFullscreen }
     #  - { key: N, mods: Control, action: SpawnNewInstance }
 
