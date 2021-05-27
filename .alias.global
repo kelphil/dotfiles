@@ -68,11 +68,11 @@ alias nowdate='date +"%d-%m-%Y"'
 ## -----------------------------------------------------------------------------------------
 # Editors
 ## -----------------------------------------------------------------------------------------
-alias v='vim -p'
+alias v='nvim'
 alias s=/usr/local/bin/sublime
 alias n=nedit
-alias vis='vim "+set si"'
-alias edit='vim'
+alias vis='nvim "+set si"'
+alias edit='nvim'
 alias meld='/usr/bin/python /usr/bin/meld'
 
 ## -----------------------------------------------------------------------------------------
