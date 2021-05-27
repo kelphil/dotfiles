@@ -7,30 +7,24 @@
 "            |_|
 "
 "--------------------------------------------------------------
-" Vundle Package Manager Settings
+
+"--------------------------------------------------------------
+" Set Leader Key
+"--------------------------------------------------------------
+" With a map leader it's possible to do extra key combinations
+" like <leader>w saves the current file
+nnoremap <Space> <Nop>
+let mapleader=" "
+
+"--------------------------------------------------------------
+" General
 "--------------------------------------------------------------
 set nocompatible              " be iMproved, required
-set noerrorbells
-set smartindent
-" set termguicolors
-set number
-set relativenumber
-set scrolloff=8
-set nowrap
-set paste
-set pastetoggle=<F10>
-set noswapfile
-set nobackup
-set signcolumn=yes
-set hlsearch
-set incsearch
-set cursorline
-set spelllang=en_us
-set spell
-set path=.,,**
-
 filetype off                  " required
 
+"--------------------------------------------------------------
+" Vundle Package Manager Settings
+"--------------------------------------------------------------
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -86,28 +80,6 @@ filetype plugin indent on    " required
 "--------------------------------------------------------------
 " User Settings by Kelvin Philip
 "--------------------------------------------------------------
-
-let mapleader=","
-let g:ackprg = 'ag --nogroup --nocolor --column'
-
-" PLUGIN: FZF
-nnoremap <silent> <Leader>b :Buffers<CR>
-nnoremap <silent> <C-g> :Ag<CR>
-nnoremap <silent> <C-f> :Files<CR>
-nnoremap <silent> <C-p> :GFiles<CR>
-nnoremap <silent> <Leader>f :Rg<CR>
-nnoremap <silent> <Leader>/ :BLines<CR>
-nnoremap <silent> <Leader>' :Marks<CR>
-nnoremap <silent> <Leader>g :Commits<CR>
-nnoremap <silent> <Leader>H :Helptags<CR>
-nnoremap <silent> <Leader>hh :History<CR>
-nnoremap <silent> <Leader>h: :History:<CR>
-nnoremap <silent> <Leader>h/ :History/<CR> 
-
-" TABS
-nnoremap <silent> <Tab> gt
-nnoremap <silent> <S-Tab> gT
-
 
 if filereadable(glob("$DOTFILES/.vimrc.local")) 
     source $DOTFILES/.vimrc.local
