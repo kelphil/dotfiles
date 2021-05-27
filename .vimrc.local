@@ -384,6 +384,14 @@ endfunction
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Buffers
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Go to next buffer
+nnoremap <leader>n :bnext<CR>
+" Open all buffers as tabs
+nnoremap <leader>T :tab ball<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Startify Plugin
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <silent> <C-h> :Startify<CR>
@@ -432,7 +440,7 @@ let g:airline_powerline_fonts = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree Plugin
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <leader>n :NERDTreeFocus<CR>
+" nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-t> :NERDTree<CR>
 " nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
