@@ -151,7 +151,8 @@ if has("gui_running")
 endif
 
 " Set utf8 as standard encoding and en_US as the standard language
-set encoding=utf8
+set encoding=UTF-8
+set guifont=Hack-Regular
 
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
@@ -419,6 +420,25 @@ let g:netrw_winsize = 20
 nnoremap <leader>t :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" airline plugin
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:airline_powerline_fonts = 1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" NERDTree Plugin
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-t> :NERDTree<CR>
+" nnoremap <C-n> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+" Open the existing NERDTree on each new tab.
+" autocmd BufWinEnter * silent NERDTreeMirror
+
+" Mirror the NERDTree before showing it. This makes it the same on all tabs.
+nnoremap <C-n> :NERDTreeMirror<CR>:NERDTreeToggle<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " tabs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <silent> <Tab> gt
@@ -439,5 +459,6 @@ set cursorline
 set spelllang=en_us
 " set spell
 set path=.,,**
+set mouse=a
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
