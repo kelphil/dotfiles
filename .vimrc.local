@@ -466,6 +466,9 @@ nnoremap Q <nop>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set autoread wildmode=longest,list,full
+set splitbelow
+set splitright 
 set smartindent
 " set termguicolors
 set number
