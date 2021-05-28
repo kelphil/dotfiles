@@ -2,8 +2,10 @@
 " Enable GruvBox Theme - https://github.com/morhetz/gruvbox
 " ---------------------------------------------------------
 try
-    colorscheme gruvbox
-    let g:lightline = {'colorscheme': 'gruvbox'} 
+    colorscheme nord
+    " colorscheme gruvbox
+    " let g:lightline = {'colorscheme': 'gruvbox'} 
+    let g:lightline = {'colorscheme': 'ayu_dark'} 
 catch
 endtry
 

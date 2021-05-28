@@ -430,3 +430,6 @@ bind -n S-Left  previous-window
 bind -n S-Right next-window
 
 bind -n C-t last-window        # move to last active window
+
+# Term GUI Colors
+set -ga terminal-overrides ',xterm-256color:Tc'

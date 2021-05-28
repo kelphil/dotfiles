@@ -541,7 +541,7 @@ set autoread wildmode=longest,list,full
 set splitbelow
 set splitright 
 set smartindent
-" set termguicolors
+set termguicolors
 set number
 set relativenumber
 set scrolloff=8
