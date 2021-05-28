@@ -143,3 +143,41 @@ saga.init_lsp_saga {
 EOF
 "
 "--------------------------------------------------------------
+" Trouble
+"--------------------------------------------------------------
+lua << EOF
+  require("trouble").setup {
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section below
+  }
+EOF
+"
+"--------------------------------------------------------------
+" TO-DO Comments
+"--------------------------------------------------------------
+lua << EOF
+  require("todo-comments").setup {
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section below
+  }
+EOF
+"
+"--------------------------------------------------------------
+" LSP Signature
+"--------------------------------------------------------------
+lua << EOF
+  require'lsp_signature'.on_attach()
+EOF
+"
+"--------------------------------------------------------------
+" Telescope
+"--------------------------------------------------------------
+lua << EOF
+  require('telescope').setup{
+    color_devicons = true,
+}
+EOF
+"
+"--------------------------------------------------------------
