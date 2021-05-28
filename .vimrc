@@ -54,6 +54,7 @@ Plugin 'VundleVim/Vundle.vim'
 " " All of your Plugins must be added before the following line
 Plugin 'neovim/nvim-lspconfig'
 Plugin 'hrsh7th/nvim-compe'
+Plugin 'glepnir/lspsaga.nvim'
 Plugin 'gruvbox-community/gruvbox'
 " Plugin 'morhetz/gruvbox'
 Plugin 'itchyny/lightline.vim'
@@ -87,7 +88,6 @@ filetype plugin indent on    " required
 "--------------------------------------------------------------
 " User Settings by Kelvin Philip
 "--------------------------------------------------------------
-
 if filereadable(glob("$DOTFILES/.vimrc.local")) 
     source $DOTFILES/.vimrc.local
     source $DOTFILES/.vimrc.kp
