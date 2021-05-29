@@ -58,12 +58,13 @@ alias hn='hostname'
 ## -----------------------------------------------------------------------------------------
 # DateTime
 ## -----------------------------------------------------------------------------------------
+alias NextYear='date --date="1 year"'
+alias NextMonth='date --date="1 month"'
+alias NextWeek='date --date="1 week"'
+alias Today='date --date="now"'
 alias OneWeekAgo='date --date="1 week ago"'
 alias OneMonthAgo='date --date="1 month ago"'
 alias OneYearAgo='date --date="1 year ago"'
-alias now='date +"%T'
-alias nowtime=now
-alias nowdate='date +"%d-%m-%Y"'
 
 ## -----------------------------------------------------------------------------------------
 # Editors
