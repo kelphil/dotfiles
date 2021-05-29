@@ -529,10 +529,10 @@ nnoremap gR <cmd>TroubleToggle lsp_references<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Telescope
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <silent> <C-p> ff <cmd>lua require('telescope.builtin').find_files()<cr>
-nnoremap <silent> <C-g> fg <cmd>lua require('telescope.builtin').live_grep()<cr>
-nnoremap <silent> <C-b> fb <cmd>lua require('telescope.builtin').buffers()<cr>
-nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+nnoremap <C-f> :lua require('telescope.builtin').find_files()<CR>
+nnoremap <C-p> :lua require('telescope.builtin').git_files()<CR>
+nnoremap <C-g> :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR>
+nnoremap <C-w> :lua require('telescope.builtin').grep_string { search = vim.fn.expand("<cword>") }<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General settings
