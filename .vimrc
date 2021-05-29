@@ -52,6 +52,7 @@ Plugin 'VundleVim/Vundle.vim'
 " " Plugin 'ascenator/L9', {'name': 'newL9'}
 "
 " " All of your Plugins must be added before the following line
+Plugin 'edkolev/tmuxline.vim'
 Plugin 'neovim/nvim-lspconfig'
 Plugin 'hrsh7th/nvim-compe'
 Plugin 'glepnir/lspsaga.nvim'
