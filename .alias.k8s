@@ -24,6 +24,9 @@ function kscale() {
 function kimage() {
   kubectl -n $KUBERNETES_NAMESPACE describe deploy $1 | grep Image: | sed 's/Image://g' | awk '{print $1}'
 }
+function kbusybox() {
+    kubectl -n $KUBERNETES_NAMESPACE run -i --rm --tty busybox --image=busybox --restart=Never -- sh
+}
 alias ktoken='kubectl -n kubernetes-dashboard get secret $(kubectl -n kubernetes-dashboard get sa/default -o jsonpath="{.secrets[0].name}") -o go-template="{{.data.token | base64decode}}"'
 function vaml() {
   vim -R -c 'set syntax=yaml' -;
