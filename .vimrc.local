@@ -386,6 +386,7 @@ endfunction
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <leader>bb :Buffers<CR>
 " Go to next quickfix list item
 nnoremap <silent> <M-q> :cnext<CR>
 " Go to next buffer
@@ -518,6 +519,11 @@ inoremap <silent><expr> <CR>      compe#confirm('<CR>')
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Trouble
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  TODO: Add feature x
+"  HACK: Add feature x
+"  WARN: Add feature x
+"  PERF: Add feature x
+"  NOTE: Add feature x
 nnoremap <leader>tt <cmd>TodoTrouble<cr>
 nnoremap <leader>xx <cmd>TroubleToggle<cr>
 nnoremap <leader>xw <cmd>TroubleToggle lsp_workspace_diagnostics<cr>
@@ -531,8 +537,16 @@ nnoremap gR <cmd>TroubleToggle lsp_references<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <C-f> :lua require('telescope.builtin').find_files()<CR>
 nnoremap <C-p> :lua require('telescope.builtin').git_files()<CR>
-nnoremap <C-g> :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR>
-nnoremap <C-w> :lua require('telescope.builtin').grep_string { search = vim.fn.expand("<cword>") }<CR>
+nnoremap <C-l> :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR>
+nnoremap <C-g> :lua require('telescope.builtin').grep_string { search = vim.fn.expand("<cword>") }<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Neoformat Prettier
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd BufWritePre,TextChanged,InsertLeave *.js Neoformat
+" autocmd FileType javascript setlocal formatprg=prettier\ --single-quote\ --trailing-comma\ es5
+" Use formatprg when available
+" let g:neoformat_try_formatprg = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General settings
