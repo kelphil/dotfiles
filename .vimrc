@@ -62,9 +62,7 @@ Plugin 'folke/trouble.nvim'
 Plugin 'nvim-lua/popup.nvim'
 Plugin 'nvim-lua/plenary.nvim'
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-" Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
-" Plugin 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plugin 'nvim-telescope/telescope-fzy-native.nvim'
 Plugin 'nvim-telescope/telescope.nvim'
 Plugin 'folke/todo-comments.nvim'
