@@ -49,6 +49,12 @@ setopt NOHUP
 
 
 #+---------------------------------------------+#
+# VirtualEnvWrapper
+#+---------------------------------------------+#
+export WORKON_HOME=~/envs
+
+
+#+---------------------------------------------+#
 # Powerline10k prompt configuration
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 #+---------------------------------------------+#
