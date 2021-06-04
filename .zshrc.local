@@ -52,6 +52,7 @@ setopt NOHUP
 # VirtualEnvWrapper
 #+---------------------------------------------+#
 export WORKON_HOME=~/envs
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 
 
 #+---------------------------------------------+#
