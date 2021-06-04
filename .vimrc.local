@@ -553,10 +553,10 @@ nnoremap <C-g> :lua require('telescope.builtin').grep_string { search = vim.fn.e
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ALE - Asynchronous Lint Engine
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Change max allowed line-length
+let b:ale_python_flake8_options = '--max-line-length=120 --ignore=E265,E266,501'
 " Check Python files with flake8 and pylint.
 let b:ale_linters = ['flake8']
-" Fix Python files with autopep8 and yapf.
-let b:ale_fixers = ['black']
 " global fixers
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
