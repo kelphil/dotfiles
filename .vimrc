@@ -81,6 +81,7 @@ Plugin 'preservim/nerdtree'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'sbdchd/neoformat'
+Plugin 'dense-analysis/ale'
 Plugin 'tpope/vim-vinegar'
 Plugin 'ap/vim-css-color'
 Plugin 'ryanoasis/vim-devicons'
@@ -102,7 +103,7 @@ filetype plugin indent on    " required
 "--------------------------------------------------------------
 " User Settings by Kelvin Philip
 "--------------------------------------------------------------
-if filereadable(glob("$DOTFILES/.vimrc.local")) 
+if filereadable(glob("$DOTFILES/.vimrc.local"))
     source $DOTFILES/.vimrc.local
     source $DOTFILES/.vimrc.kp
 endif
