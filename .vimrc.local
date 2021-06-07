@@ -401,10 +401,11 @@ nnoremap <leader>T :tab ball<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:startify_session_dir = '~/.config/nvim/sessions'
 let g:startify_lists = [
-          \ { 'type': 'files',     'header': ['   Files']                        },
-          \ { 'type': 'dir',       'header': ['   Current Directory: '. getcwd()] },
-          \ { 'type': 'sessions',  'header': ['   Sessions']                     },
-          \ { 'type': 'bookmarks', 'header': ['   Bookmarks']                    },
+          \ { 'type': 'files',     'header': ['   Files']                           },
+          \ { 'type': 'dir',       'header': ['   Current Directory: '. getcwd()]   },
+          \ { 'type': 'sessions',  'header': ['   Sessions']                        },
+          \ { 'type': 'commands',  'header': ['   Commands']                        },
+          \ { 'type': 'bookmarks', 'header': ['   Bookmarks']                       },
           \ ]
 
 let g:startify_session_autoload = 0
@@ -438,6 +439,13 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 " GitGutter Plugin
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set updatetime=100
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" VIM Fugitive - GIT Conflict Merge
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <leader>gd :Gvdiff<CR>
+nnoremap gdl :diffget //2<CR>
+nnoremap gdr :diffget //3<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " netrw plugin
