@@ -551,6 +551,12 @@ nnoremap <C-g> :lua require('telescope.builtin').grep_string { search = vim.fn.e
 " let g:neoformat_try_formatprg = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Limelight
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ALE - Asynchronous Lint Engine
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Change max allowed line-length

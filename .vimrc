@@ -32,6 +32,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 " " All of your Plugins must be added before the following line
 Plugin 'edkolev/tmuxline.vim'
+Plugin 'junegunn/goyo.vim'
+Plugin 'junegunn/limelight.vim'
 Plugin 'neovim/nvim-lspconfig'
 Plugin 'hrsh7th/nvim-compe'
 Plugin 'glepnir/lspsaga.nvim'
