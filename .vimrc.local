@@ -419,8 +419,10 @@ function! StartifyEntryFormat()
 endfunction
 
 let g:startify_bookmarks = [
-            \ { 'v': '~/.config/nvim/init.vim' },
-            \ { 'z': '~/.zshrc' },
+            \ { 'n': '~/dotfiles/init.vim' },
+            \ { 't': '~/dotfiles/.tmux.conf.local' },
+            \ { 'v': '~/dotfiles/.vimrc.local' },
+            \ { 'z': '~/dotfiles/.zshrc.local' },
             \ ]
 
 let g:startify_enable_special = 0
