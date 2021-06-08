@@ -72,6 +72,8 @@ alias OneYearAgo='date --date="1 year ago"'
 alias t='task all'
 alias ts='task summary'
 alias tb='task burndown.daily'
+alias tw='task due.before:eow'
+alias tm='task due.before:today+30days'
 alias tui='/usr/local/bin/taskwarrior-tui'
 
 ## -----------------------------------------------------------------------------------------
