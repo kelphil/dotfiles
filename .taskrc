@@ -42,7 +42,7 @@ search.case.sensitive=no
 weekstart=Monday
 
 include /home/kephilip/dotfiles/holidays.en-CA.rc
-calendar.holidays=full
+calendar.holidays=sparse
 
 # Daily burndown
 alias.burndown=burndown.daily
