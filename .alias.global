@@ -70,6 +70,8 @@ alias OneYearAgo='date --date="1 year ago"'
 # TaskWarrior
 ## -----------------------------------------------------------------------------------------
 alias t='task all'
+alias ts='task summary'
+alias tb='task burndown.daily'
 alias tui='/usr/local/bin/taskwarrior-tui'
 
 ## -----------------------------------------------------------------------------------------
