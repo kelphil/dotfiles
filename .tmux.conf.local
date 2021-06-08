@@ -408,6 +408,9 @@ set -g @continuum-restore 'on'
 # # /!\ do not remove the previous line
 
 # -- user overrides ------------------------------------------------------------
+
+set -g @plugin "arcticicestudio/nord-tmux"
+
 # set-option -gw xterm-keys on
 
 # split current window horizontally
