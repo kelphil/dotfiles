@@ -147,7 +147,8 @@ report.all.columns=status,uuid.short,start.active,entry.age,priority,project,tag
 report.all.labels=S,UUID,A,Age,P,Project,Tags,Description,Wait,Sch,Due,Done,Until
 
 report.next.description=Urgent (quadrant 1) + scheduled (quadrant 2) tasks
-report.next.filter=(end: +frog) or status:pending (+OVERDUE or +DUE or +weekly or (-idea -goal (+ACTIVE or (+SCHEDULED +READY))))
+#report.next.filter=(end: +frog) or status:pending (+OVERDUE or +DUE or +weekly or (-idea -goal (+ACTIVE or (+SCHEDULED +READY))))
+report.next.filter=
 report.next.sort=due+,urgency-,tags-
 report.next.columns=id,start.age,impact,workload,priority,joy,depends.indicator,project,due.relative,description,urgency
 #,scheduled.age
