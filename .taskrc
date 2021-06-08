@@ -51,4 +51,172 @@ alias.burndown=burndown.daily
 report.list.columns=start.active,id,project,priority,due,description,entry.age
 report.list.labels= , ,Project,Pri,Due,Description,Age
 
+#+---------------------------------------------------------------------------
+# https://github.com/kevinstadler/taskwarrior-vit-config/blob/master/.taskrc
+#+---------------------------------------------------------------------------
+# Blocking is default 8 which is a bit high
+urgency.blocking.coefficient=5.0
+# Just because its tagged/annotated doesn't mean its important
+urgency.tags.coefficient=0
+urgency.annotations.coefficient=0
+# Actually urgent tags
+urgency.user.tag.customer_facing.coefficient=1.0
+urgency.user.tag.critical.coefficient=2.0
+# Postponed stuff
+urgency.user.tag.postponed.coefficient=-5
+# Default to Medium priority
+uda.priority.default=M
+
+# Onenote
+uda.notes.label=Notes
+uda.notes.type=string
+
+# location/type for filtering contexts
+uda.action.type=string
+uda.action.values=coding,communication,documentation,reading,research,writing,
+
+uda.location.type=string
+
+# goal scope
+uda.goal.label=Goal
+uda.goal.type=string
+uda.goal.values=year,quarter,month,
+color.uda.goal.year=bright red
+color.uda.goal.quarter=rgb520
+color.uda.goal.month=cyan
+
+# Impact aka Importance
+uda.impact.label=Impact
+uda.impact.type=string
+uda.impact.values=H,,L
+
+# Workload
+uda.workload.label=Workload
+uda.workload.type=string
+uda.workload.values=H,,L
+
+# Priority
+uda.priority.values=H,,L
+
+# Enjoyment
+uda.joy.label=Enjoyment
+uda.joy.type=string
+uda.joy.values=H,,L
+
+# Bulletproof Urgency = (Pri(2/4/6/8) + Imp(2/4/6) + Work(1/2/3) + Enjoyment(3/2/1)) / .06
+urgency.uda.impact.L.coefficient=-1.5
+urgency.uda.impact..coefficient=0
+urgency.uda.impact.H.coefficient=1.5
+
+urgency.uda.workload.L.coefficient=-.5
+urgency.uda.workload..coefficient=0
+urgency.uda.workload.H.coefficient=.5
+
+# 'someday' tasks are marked as waiting, so they have -3 deducted by default
+urgency.uda.priority.L.coefficient=-1
+urgency.uda.priority..coefficient=0
+urgency.uda.priority.H.coefficient=1
+
+# push enjoyable stuff down
+urgency.uda.joy.L.coefficient=.5
+urgency.uda.joy..coefficient=0
+urgency.uda.joy.H.coefficient=-.5
+
+# defaults
+#urgency.due.coefficient=12
+#urgency.active.coefficient=4
+urgency.blocking.coefficient=2
+urgency.blocked.coefficient=-3
+
+# adjustments
+urgency.due.coefficient=10
+urgency.user.tag.OVERDUE.coefficient=5
+urgency.waiting.coefficient=-5
+
+# TODO show 'next' ones slightly higher
+urgency.user.tag.next.coefficient=0
+urgency.scheduled.coefficient=1
+
+# irrelevant ones
+urgency.age.coefficient=0
+urgency.project.coefficient=0
+urgency.tags.coefficient=0
+urgency.annotations.coefficient=0
+
+report.all.columns=status,uuid.short,start.active,entry.age,priority,project,tags,description,wait.remaining,scheduled,due.remaining,end.age,until.remaining
+report.all.labels=S,UUID,A,Age,P,Project,Tags,Description,Wait,Sch,Due,Done,Until
+
+report.next.description=Urgent (quadrant 1) + scheduled (quadrant 2) tasks
+report.next.filter=(end: +frog) or status:pending (+OVERDUE or +DUE or +weekly or (-idea -goal (+ACTIVE or (+SCHEDULED +READY))))
+report.next.sort=due+,urgency-,tags-
+report.next.columns=id,start.age,impact,workload,priority,joy,depends.indicator,project,due.relative,description,urgency
+#,scheduled.age
+report.next.labels=ID,Active,I,W,P,J,D,Project,Due,Description,Urg
+
+report.master.description=All pending/non-waiting tasks
+report.master.filter=status:pending scheduled: due: -idea
+report.master.sort=start+,urgency-,entry- # ,project+
+report.master.columns=id,impact,workload,priority,joy,depends.indicator,project,due.relative,description,urgency,entry.age
+report.master.labels=ID,I,W,P,J,D,Project,Due,Description,Urg,Age
+
+report.project.description=ALL tasks related to a project, ordered by status
+report.project.filter=-PARENT
+# 'scheduled' sorting in taskwarrior puts all non-scheduled before or after both future-and-past scheduled, so that's not good
+# TODO file 'vit' bug that it can't sort on 'depends':
+#  File "/usr/local/Cellar/vit/2.1.0/libexec/lib/python3.9/site-packages/vit/task_list.py", line 84, in update_data
+#    self.sort()
+#  File "/usr/local/Cellar/vit/2.1.0/libexec/lib/python3.9/site-packages/vit/task_list.py", line 184, in sort
+#    self.tasks = sorted(self.tasks, key=cmp_to_key(comparator), reverse=True)
+#  File "/usr/local/Cellar/vit/2.1.0/libexec/lib/python3.9/site-packages/vit/task_list.py", line 176, in comparator
+#    return -1 if first[column] < second[column] else 1 if first[column] > second[column] else 0
+#TypeError: '<' not supported between instances of 'LazyUUIDTaskSet' and 'set'
+
+# completed at bottom, then pending before waiting, then active tasks, TODO then blocked to the bottom (see above), then group by project, with idea/goal/next tags first
+#report.project.sort=end-,status+/,start+,project+/,tags-,urgency-
+report.project.sort=project+/,end-,status+/,start+,tags-,urgency-
+report.project.columns=id,start.age,impact,workload,priority,joy,project,wait.relative,due.relative,depends,description,urgency,end
+#,scheduled.relative
+report.project.labels=ID,Active,I,W,P,J,Project,Wait,Due,Deps,Description,Urg,Done
+
+report.ideas.description=All ideas
+report.ideas.filter=+idea
+report.ideas.sort=end-,wait-,start,entry-
+report.ideas.columns=id,start.age,priority,impact,workload,joy,project,description,entry,end
+report.ideas.labels=ID,Active,P,I,W,J,Project,Description,Added,Until
+
+report.goals.description=Long term goals
+# filter by the goal tag, actually displayed is the goal uda!
+report.goals.filter=+goal
+report.goals.sort=status-,scheduled+,goal+
+report.goals.columns=id,goal,start,scheduled,due,description,project
+report.goals.labels=ID,Scope,Active since,Scheduled,Due,Description,Project
+report.goals.dateformat=B Y
+
+# what you SHOULD do = green (i.e. impact is the most important)
+color.uda.impact.H=bold bright green
+color.uda.impact.L=gray8
+# how difficult it is to do something = orange vs green
+color.uda.workload.H=bold rgb520
+color.uda.workload.L=bright green
+#color.uda.workload.H=bold rgb203
+#color.uda.workload.L=rgb033
+# subjective things = pink (difficult) vs blueish-turquoise (easy)
+color.uda.priority.H=rgb033
+color.uda.priority.L=rgb403
+# low enjoyment tasks are more urgent (do them if you can handle them) -- so the coloring is counter-intuitive here!
+color.uda.joy.H=rgb033
+color.uda.joy.L=rgb403
+
+color.active=black on green
+# from least to most urgent
+color.due=black on yellow
+color.due.today=black on rgb520
+color.overdue=black on rgb500
+
+color.blocked=color8 on black
+color.blocking=bold red on black
+color.completed=green
+color.deleted=gray10
+color.scheduled=
+
 #+-----------------------------
