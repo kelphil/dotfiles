@@ -5,7 +5,8 @@ try
     colorscheme nord
     " colorscheme gruvbox
     " let g:lightline = {'colorscheme': 'gruvbox'} 
-    let g:lightline = {'colorscheme': 'ayu_dark'} 
+    " let g:lightline = {'colorscheme': 'ayu_dark'} 
+    let g:lightline = {'colorscheme': 'nord'} 
 catch
 endtry
 
