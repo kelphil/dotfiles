@@ -33,7 +33,7 @@ include /usr/share/taskwarrior/solarized-dark-256.theme
 #+-----------------------------
 # Overrides from Kelvin Philip
 #+-----------------------------
-active.indicator=>
+active.indicator=
 dateformat=YMD
 default.command=list
 editor=nvim
@@ -143,8 +143,10 @@ urgency.project.coefficient=0
 urgency.tags.coefficient=0
 urgency.annotations.coefficient=0
 
-report.all.columns=status,uuid.short,start.active,entry.age,priority,project,tags,description,wait.remaining,scheduled,due.remaining,end.age,until.remaining
-report.all.labels=S,UUID,A,Age,P,Project,Tags,Description,Wait,Sch,Due,Done,Until
+report.all.columns=status,uuid.short,start.active,entry.age,priority,project,description,wait.remaining,scheduled,due.remaining,end.age,until.remaining,tags
+report.all.labels=S,UUID,A,Age,P,Project,Description,Wait,Sch,Due,Done,Until,Tags
+report.all.filter=status.not:Completed
+report.all.sort=due+,urgency-,tags-
 
 report.next.description=Urgent (quadrant 1) + scheduled (quadrant 2) tasks
 #report.next.filter=(end: +frog) or status:pending (+OVERDUE or +DUE or +weekly or (-idea -goal (+ACTIVE or (+SCHEDULED +READY))))
