@@ -28,7 +28,7 @@ color.debug=magenta
 #+-------------+
 color.completed=green
 color.deleted=red
-color.active=bold black on green
+color.active=black on green
 color.recurring=
 color.scheduled=white on black
 color.until=white on bright black
@@ -57,9 +57,9 @@ color.tagged=
 #+-----+
 #+ Due +
 #+-----+
-color.due=blue
+color.due=black on rgb530
 color.due.today=cyan on black
-color.overdue=bold black on red
+color.overdue=white on red
 
 #+---------+
 #+ Reports +
