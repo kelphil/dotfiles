@@ -150,10 +150,10 @@ report.all.sort=due+,urgency-,tags-
 
 report.next.description=Urgent (quadrant 1) + scheduled (quadrant 2) tasks
 #report.next.filter=(end: +frog) or status:pending (+OVERDUE or +DUE or +weekly or (-idea -goal (+ACTIVE or (+SCHEDULED +READY))))
-report.next.filter=
+report.next.filter=status.not:Completed
 report.next.sort=due+,urgency-,tags-
-report.next.columns=start.active,id,status,impact,workload,priority,joy,depends.indicator,project,due.relative,wait.remaining,description,tags,start.age,urgency
-report.next.labels=A,ID,Status,I,W,P,J,D,Project,Due,Wait,Description,Tags,Active,Urg
+report.next.columns=id,status,impact,workload,priority,joy,depends.indicator,project,due.relative,wait.remaining,description,tags,start.age,urgency
+report.next.labels=ID,Status,I,W,P,J,D,Project,Due,Wait,Description,Tags,Active,Urg
 
 report.master.description=All pending/non-waiting tasks
 report.master.filter=status:pending scheduled: due: -idea
