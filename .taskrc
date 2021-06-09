@@ -25,7 +25,7 @@ data.location=~/.task
 #include /usr/share/taskwarrior/dark-yellow-green.theme
 #include /usr/share/taskwarrior/dark-gray-256.theme
 #include /usr/share/taskwarrior/dark-gray-blue-256.theme
-include /usr/share/taskwarrior/solarized-dark-256.theme
+#include /usr/share/taskwarrior/solarized-dark-256.theme
 #include /usr/share/taskwarrior/solarized-light-256.theme
 #include /usr/share/taskwarrior/no-color.theme
 
@@ -192,31 +192,31 @@ report.goals.labels=ID,Scope,Active since,Scheduled,Due,Description,Project
 report.goals.dateformat=B Y
 
 # what you SHOULD do = green (i.e. impact is the most important)
-color.uda.impact.H=bold bright green
-color.uda.impact.L=gray8
+#color.uda.impact.H=bold bright green
+#color.uda.impact.L=gray8
 # how difficult it is to do something = orange vs green
-color.uda.workload.H=bold rgb520
-color.uda.workload.L=bright green
+#color.uda.workload.H=bold rgb520
+#color.uda.workload.L=bright green
 #color.uda.workload.H=bold rgb203
 #color.uda.workload.L=rgb033
 # subjective things = pink (difficult) vs blueish-turquoise (easy)
-color.uda.priority.H=rgb033
-color.uda.priority.L=rgb403
+#color.uda.priority.H=rgb033
+#color.uda.priority.L=rgb403
 # low enjoyment tasks are more urgent (do them if you can handle them) -- so the coloring is counter-intuitive here!
-color.uda.joy.H=rgb033
-color.uda.joy.L=rgb403
+#color.uda.joy.H=rgb033
+#color.uda.joy.L=rgb403
 
-color.active=black on green
+#color.active=black on green
 # from least to most urgent
-color.due=black on yellow
-color.due.today=black on rgb520
-color.overdue=black on rgb500
+#color.due=black on yellow
+#color.due.today=black on rgb520
+#color.overdue=black on rgb500
 
-color.blocked=color8 on black
-color.blocking=bold red on black
-color.completed=green
-color.deleted=gray10
-color.scheduled=
+#color.blocked=color8 on black
+#color.blocking=bold red on black
+#color.completed=green
+#color.deleted=gray10
+#color.scheduled=
 
 uda.taskwarrior-tui.keyconfig.quit=q
 uda.taskwarrior-tui.keyconfig.refresh=r
@@ -241,6 +241,11 @@ uda.taskwarrior-tui.keyconfig.zoom=z
 uda.taskwarrior-tui.keyconfig.context-menu=c
 uda.taskwarrior-tui.keyconfig.next-tab=]
 uda.taskwarrior-tui.keyconfig.previous-tab=[
+uda.taskwarrior-tui.selection.indicator=綠
+uda.taskwarrior-tui.selection.bold=yes
+uda.taskwarrior-tui.selection.italic=yes
+uda.taskwarrior-tui.selection.dim=no
+uda.taskwarrior-tui.selection.blink=no
 uda.taskwarrior-tui.task-report.next.filter=status.not:Completed
 
 #+-----------------------------
