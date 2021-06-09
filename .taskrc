@@ -67,10 +67,6 @@ urgency.user.tag.postponed.coefficient=-5
 # Default to Medium priority
 uda.priority.default=M
 
-# Onenote
-uda.notes.label=Notes
-uda.notes.type=string
-
 # location/type for filtering contexts
 uda.action.type=string
 uda.action.values=coding,communication,documentation,reading,research,writing,
