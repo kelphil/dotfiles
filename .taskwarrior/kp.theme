@@ -64,8 +64,8 @@ color.overdue=bold black on red
 #+---------+
 #+ Reports +
 #+---------+
-color.burndown.done=bold black on cyan
-color.burndown.pending=black on bright cyan
+color.burndown.done=bold black on green
+color.burndown.pending=black on bright yellow
 color.burndown.started=black on blue
 
 color.history.add=bold black on blue
@@ -78,13 +78,13 @@ color.summary.bar=black on cyan
 #+----------+
 #+ Calendar +
 #+----------+
-color.calendar.due=bold black on blue
-color.calendar.due.today=bold black on cyan
-color.calendar.holiday=bold blue on white
+color.calendar.due=bold black on yellow
+color.calendar.due.today=bold black on red
+color.calendar.holiday=bold black on yellow
 color.calendar.overdue=white on red
 color.calendar.today=bold black on cyan
-color.calendar.weekend=bright white on bright black
-color.calendar.weeknumber=bold black
+color.calendar.weekend=black
+color.calendar.weeknumber=bold blue
 
 #+-----------------+
 #+ Synchronization +
