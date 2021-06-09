@@ -28,7 +28,10 @@ data.location=~/.task
 #include /usr/share/taskwarrior/solarized-dark-256.theme
 #include /usr/share/taskwarrior/solarized-light-256.theme
 #include /usr/share/taskwarrior/no-color.theme
-include /home/kephilip/dotfiles/.taskwarrior/nord.theme
+#include /home/kephilip/dotfiles/.taskwarrior/solarized.theme
+#include /home/kephilip/dotfiles/.taskwarrior/gruvbox.theme
+#include /home/kephilip/dotfiles/.taskwarrior/nord.theme
+include /home/kephilip/dotfiles/.taskwarrior/kp.theme
 
 
 #+-----------------------------
@@ -149,9 +152,8 @@ report.next.description=Urgent (quadrant 1) + scheduled (quadrant 2) tasks
 #report.next.filter=(end: +frog) or status:pending (+OVERDUE or +DUE or +weekly or (-idea -goal (+ACTIVE or (+SCHEDULED +READY))))
 report.next.filter=
 report.next.sort=due+,urgency-,tags-
-report.next.columns=id,start.age,impact,workload,priority,joy,depends.indicator,project,due.relative,description,urgency
-#,scheduled.age
-report.next.labels=ID,Active,I,W,P,J,D,Project,Due,Description,Urg
+report.next.columns=start.active,id,status,impact,workload,priority,joy,depends.indicator,project,due.relative,wait.remaining,description,tags,start.age,urgency
+report.next.labels=A,ID,Status,I,W,P,J,D,Project,Due,Wait,Description,Tags,Active,Urg
 
 report.master.description=All pending/non-waiting tasks
 report.master.filter=status:pending scheduled: due: -idea
