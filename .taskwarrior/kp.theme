@@ -78,10 +78,10 @@ color.summary.bar=black on cyan
 #+----------+
 #+ Calendar +
 #+----------+
-color.calendar.due=bold black on yellow
-color.calendar.due.today=bold black on red
-color.calendar.holiday=bold black on yellow
-color.calendar.overdue=white on red
+color.calendar.due=black on rgb530
+color.calendar.due.today=white on rgb500
+color.calendar.holiday=black on rgb550
+color.calendar.overdue=white on rgb500
 color.calendar.today=bold black on cyan
 color.calendar.weekend=black
 color.calendar.weeknumber=bold blue
