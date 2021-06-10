@@ -7,7 +7,7 @@ service = jira
 jira.base_uri = https://ontrack-internal.amd.com/ 
 jira.username = kephilip
 jira.password = @oracle:use_keyring
-jira.query = assignee = kephilip and status != closed and status != resolved
+jira.query = assignee = kephilip and status != closed and status != resolved and status != rejected
 jira.add_tags = jira
 jira.default_priority = H
 jira.description_template = {{[jirastatus]}} {{[jiraid]}} {{jirasummary}} | {{jiraurl}}
