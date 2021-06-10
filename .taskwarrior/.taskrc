@@ -282,3 +282,7 @@ uda.taskwarrior-tui.selection.blink=no
 uda.taskwarrior-tui.task-report.next.filter=status.not:Completed and status.not:Deleted
 
 #+-----------------------------
+# Contexts
+#+-----------------------------
+context.jira=+jira
+context.debug=+debug
