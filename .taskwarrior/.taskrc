@@ -55,6 +55,36 @@ alias.burndown=burndown.daily
 report.list.columns=start.active,id,project,priority,due,description,entry.age
 report.list.labels= , ,Project,Pri,Due,Description,Age
 
+
+#+---------------------------------------------------------------------------
+# Bugwarrior UDAs
+#+---------------------------------------------------------------------------
+uda.jiraissuetype.type=string
+uda.jiraissuetype.label=Issue Type
+uda.jirasummary.type=string
+uda.jirasummary.label=Jira Summary
+uda.jiraurl.type=string
+uda.jiraurl.label=Jira URL
+uda.jiradescription.type=string
+uda.jiradescription.label=Jira Description
+uda.jiraid.type=string
+uda.jiraid.label=Jira Issue ID
+uda.jiraestimate.type=numeric
+uda.jiraestimate.label=Estimate
+uda.jirafixversion.type=string
+uda.jirafixversion.label=Fix Version
+uda.jiracreatedts.type=date
+uda.jiracreatedts.label=Created At
+uda.jirastatus.type=string
+uda.jirastatus.label=Jira Status
+uda.jirasubtasks.type=string
+uda.jirasubtasks.label=Jira Subtasks
+#+---------------------------------------------------------------------------
+# END Bugwarrior UDAs
+#+---------------------------------------------------------------------------
+
+
+
 #+---------------------------------------------------------------------------
 # https://github.com/kevinstadler/taskwarrior-vit-config/blob/master/.taskrc
 #+---------------------------------------------------------------------------
@@ -96,7 +126,7 @@ uda.workload.type=string
 uda.workload.values=H,,L
 
 # Priority
-uda.priority.values=H,,L
+#uda.priority.values=H,,L
 
 # Enjoyment
 uda.joy.label=Enjoyment
@@ -145,15 +175,15 @@ urgency.annotations.coefficient=0
 
 report.all.columns=start.active,status,uuid.short,entry.age,priority,project,description,wait.remaining,scheduled,due.relative,end.age,until.remaining,tags
 report.all.labels=A,S,UUID,Age,P,Project,Description,Wait,Sch,Due,Done,Until,Tags
-report.all.filter=status.not:Completed
+report.all.filter=status.not:Completed and status.not:Deleted
 report.all.sort=due+,urgency-,tags-
 
 report.next.description=Urgent (quadrant 1) + scheduled (quadrant 2) tasks
 #report.next.filter=(end: +frog) or status:pending (+OVERDUE or +DUE or +weekly or (-idea -goal (+ACTIVE or (+SCHEDULED +READY))))
-report.next.filter=status.not:Completed
+report.next.filter=status.not:Completed and status.not:Deleted
 report.next.sort=due+,urgency-,tags-
-report.next.columns=id,status,impact,workload,priority,joy,depends.indicator,project,due.relative,wait.remaining,description,tags,start.age,urgency
-report.next.labels=ID,Status,I,W,P,J,D,Project,Due,Wait,Description,Tags,Active,Urg
+report.next.columns=id,status,impact,workload,priority,joy,depends.indicator,project,due.relative,wait.remaining,description,start.age,urgency
+report.next.labels=ID,Status,I,W,P,J,D,Project,Due,Wait,Description,Active,Urg
 
 report.master.description=All pending/non-waiting tasks
 report.master.filter=status:pending scheduled: due: -idea
@@ -249,6 +279,6 @@ uda.taskwarrior-tui.selection.bold=yes
 uda.taskwarrior-tui.selection.italic=yes
 uda.taskwarrior-tui.selection.dim=no
 uda.taskwarrior-tui.selection.blink=no
-uda.taskwarrior-tui.task-report.next.filter=status.not:Completed
+uda.taskwarrior-tui.task-report.next.filter=status.not:Completed and status.not:Deleted
 
 #+-----------------------------
