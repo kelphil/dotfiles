@@ -7,6 +7,7 @@ import logging
 import os
 import sys
 import time
+import numpy as np
 
 NOTES_DIR = "~/.notes/.taskwarriornotes"
 EDITOR = os.environ["EDITOR"]
@@ -30,7 +31,9 @@ def write_note(task_id):
     task_uuid = os.popen(f"task _get {task_id}.uuid").read().rstrip()
     task_uuid_short = task_uuid.split("-")[0]
     task_tags = os.popen(f"task _get {task_id}.tags").read().rstrip()
-    task_tag_list = task_tags.split(",")
+    task_tag_list = []
+    if task_tags != "":
+        task_tag_list = task_tags.split(",")
 
     if not task_uuid:
         logging.error(f"{task_id} has no UUID!")
@@ -54,10 +57,11 @@ def write_note(task_id):
         with open(notes_file, "w") as f:
             f.write(styledef)
             f.write(f"> id: **{task_id}** uuid: **{task_uuid_short}**\n")
-            f.write(f"\n[comment]: begin_tags\n\n")
-            for t in task_tag_list:
-                f.write(f'<mark><span class="tag">*{t}*</mark>\n')
-            f.write(f"\n[comment]: end_tags\n")
+            if len(task_tag_list):
+                f.write(f"\n[comment]: begin_tags\n\n")
+                for t in task_tag_list:
+                    f.write(f'<mark><span class="tag">*{t}*</mark>\n')
+                f.write(f"\n[comment]: end_tags\n")
             f.write(f"\n\n# {task_description}\n")
             f.write(f"\n[comment]: begin_notes\n")
             f.write(f"\n\n###### {current_date}\n\n")
@@ -67,6 +71,28 @@ def write_note(task_id):
             contents = f.readlines()
 
         index = 0
+
+        comment_index_list = []
+        for index, line in enumerate(contents):
+            if "###### [WW" in line:
+                comment_index_list.append(index)
+
+        validblock = False
+        if len(comment_index_list) > 1:
+            for ln in range(comment_index_list[0] + 1, comment_index_list[1]):
+                if contents[ln] != "\n":
+                    validblock = True
+                    break
+
+        invalidrange = []
+        if not validblock:
+            if len(comment_index_list) > 1:
+                invalidrange = list(range(comment_index_list[0], comment_index_list[1]))
+
+        idxrange = list(range(0, len(contents)))
+        valididxrange = np.setdiff1d(idxrange, invalidrange)
+        contents = [contents[idx] for idx in valididxrange]
+
         for index, line in enumerate(contents):
             if "[comment]: begin_notes" in line:
                 break
