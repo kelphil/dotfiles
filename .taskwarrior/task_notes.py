@@ -76,6 +76,7 @@ def write_note(task_id):
         for index, line in enumerate(contents):
             if "###### [WW" in line:
                 comment_index_list.append(index)
+        comment_index_list.append(len(contents))
 
         validblock = False
         if len(comment_index_list) > 1:
