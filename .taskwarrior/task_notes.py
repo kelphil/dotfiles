@@ -34,6 +34,10 @@ def write_note(task_id):
     task_tag_list = []
     if task_tags != "":
         task_tag_list = task_tags.split(",")
+    tag_lines = "\n"
+    for t in task_tag_list:
+        tag_lines += f'<mark><span class="tag">*{t}*</mark>\n'
+    tag_lines += "\n"
 
     if not task_uuid:
         logging.error(f"{task_id} has no UUID!")
@@ -57,11 +61,9 @@ def write_note(task_id):
         with open(notes_file, "w") as f:
             f.write(styledef)
             f.write(f"> id: **{task_id}** uuid: **{task_uuid_short}**\n")
-            if len(task_tag_list):
-                f.write(f"\n[comment]: begin_tags\n\n")
-                for t in task_tag_list:
-                    f.write(f'<mark><span class="tag">*{t}*</mark>\n')
-                f.write(f"\n[comment]: end_tags\n")
+            f.write(f"\n[comment]: begin_tags\n\n")
+            f.write(tag_lines)
+            f.write(f"\n[comment]: end_tags\n")
             f.write(f"\n\n# {task_description}\n")
             f.write(f"\n[comment]: begin_notes\n")
             f.write(f"\n\n###### {current_date}\n\n")
@@ -71,6 +73,23 @@ def write_note(task_id):
             contents = f.readlines()
 
         index = 0
+
+        tag_index_list = []
+        for index, line in enumerate(contents):
+            if "[comment]: begin_tags" in line:
+                tag_index_list.append(index)
+            if "[comment]: end_tags" in line:
+                tag_index_list.append(index)
+
+        oldtagrange = []
+        if len(tag_index_list) > 1:
+            oldtagrange = list(range(tag_index_list[0] + 1, tag_index_list[1]))
+
+        idxrange = list(range(0, len(contents)))
+        valididxrange = np.setdiff1d(idxrange, oldtagrange)
+        contents = [contents[idx] for idx in valididxrange]
+
+        contents.insert(tag_index_list[0] + 1, tag_lines)
 
         comment_index_list = []
         for index, line in enumerate(contents):
