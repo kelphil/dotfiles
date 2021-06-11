@@ -74,6 +74,7 @@ alias ta='task all'
 alias tb='task burndown.daily'
 alias tc='task calendar'
 alias tm='task due.before:today+30days'
+alias tn='$DOTFILES/.taskwarrior/task_notes.py'
 alias ts='task summary'
 alias tw='task due.before:eow'
 
