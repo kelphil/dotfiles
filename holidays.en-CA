@@ -1,0 +1,23 @@
+# Holiday data provided by holidata.net
+#   Generated 2021-06-14T10:22:07
+
+define holidays:
+  en-CA:
+    2021_01_01 = New Year's Day
+    2021_02_15 = Family Day
+    2021_04_02 = Good Friday
+    2021_05_24 = Victoria Day
+    2021_07_01 = Canada Day
+    2021_07_02 = Recharge Day
+    2021_07_05 = Recharge Day
+    2021_08_02 = August Civic Holiday
+    2021_08_02 = August Civic Holiday
+    2021_08_02 = Civic Holiday
+    2021_09_03 = Recharge Day
+    2021_09_06 = Labour Day
+    2021_10_11 = Thanksgiving Day
+    2021_12_24 = Winter Holiday
+    2021_12_25 = Christmas Day
+    2021_12_26 = Boxing Day
+    2022_01_01 = New Year's Day
+
