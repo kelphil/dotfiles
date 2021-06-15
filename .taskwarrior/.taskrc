@@ -47,6 +47,7 @@ weekstart=Monday
 
 include /home/kephilip/dotfiles/holidays.en-CA.rc
 calendar.holidays=sparse
+calendar.offset=on
 
 # Daily burndown
 alias.burndown=burndown.daily
