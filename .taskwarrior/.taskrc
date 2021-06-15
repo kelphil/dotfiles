@@ -287,3 +287,4 @@ uda.taskwarrior-tui.task-report.next.filter=status.not:Completed and status.not:
 #+-----------------------------
 context.jira=+jira
 context.debug=+debug
+context.team=+jackie or +mohammad
