@@ -39,6 +39,7 @@ filetype indent on
 
 " Autocomplete
 set completeopt=menuone,longest
+
 set shortmess+=c
 
 " Navigate the complete menu items like CTRL+n / CTRL+p would
