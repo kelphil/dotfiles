@@ -96,7 +96,7 @@ EOF
 "--------------------------------------------------------------
 lua << EOF
 local nvim_lsp = require('lspconfig')
--- Use an on_attach function to only map the following keys 
+-- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
@@ -198,7 +198,7 @@ local actions = require('telescope.actions')
 require('telescope').setup {
   defaults = {
     file_sorter = require('telescope.sorters').get_fzy_sorter,
-    prompt_prefix = ' >',
+    prompt_prefix = ' $ ',
     color_devicons = true,
     file_previewer = require('telescope.previewers').vim_buffer_cat.new,
     grep_previewer = require('telescope.previewers').vim_buffer_vimgrep.new,
@@ -225,7 +225,7 @@ require('telescope').setup {
     }
   }
 }
-require('telescope').load_extension('fzy_native')  
+require('telescope').load_extension('fzy_native')
+require('telescope').load_extension('coc')
 EOF
-"
 "--------------------------------------------------------------
