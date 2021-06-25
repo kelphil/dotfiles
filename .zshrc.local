@@ -32,6 +32,11 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 #+---------------------------------------------+#
 plugins=(
     git
+    git-flow
+    docker
+    docker-compose
+    kubectl
+    colored-man-pages
     zsh-autosuggestions
     taskwarrior
 )
