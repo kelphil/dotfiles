@@ -38,7 +38,8 @@ filetype plugin on
 filetype indent on
 
 " Autocomplete
-set completeopt=menuone,noinsert,noselect
+"set completeopt=menuone,noinsert,noselect
+"let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 
 set shortmess+=c
 
@@ -543,8 +544,8 @@ tnoremap <silent> <A-t> <C-\><C-n>:lua require('lspsaga.floaterm').close_float_t
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " LSP Compe
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-inoremap <silent><expr> <C-Space> compe#complete()
-inoremap <silent><expr> <CR>      compe#confirm('<CR>')
+" inoremap <silent><expr> <C-Space> compe#complete()
+" inoremap <silent><expr> <CR>      compe#confirm('<CR>')
 " inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
 " inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
 
