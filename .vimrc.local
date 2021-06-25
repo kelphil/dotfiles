@@ -514,8 +514,8 @@ nnoremap <silent> <S-Tab> gT
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " linemove
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-xnoremap K :move '<-2<CR>gv-gv
-xnoremap J :move '>+1<CR>gv-gv
+" xnoremap K :move '<-2<CR>gv-gv
+" xnoremap J :move '>+1<CR>gv-gv
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " legacy
@@ -525,15 +525,15 @@ nnoremap Q <nop>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " LSP Saga
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <silent> kf <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap <silent> kk <cmd>lua require'lspsaga.provider'.preview_definition()<CR>
-nnoremap <silent> gR <cmd>lua require'lspsaga.provider'.lsp_finder()<CR>
+nnoremap <silent> kd <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> kp <cmd>lua require'lspsaga.provider'.preview_definition()<CR>
+nnoremap <silent> kf <cmd>lua require'lspsaga.provider'.lsp_finder()<CR>
 nmap <silent> <C-Space> <cmd>lua require('lspsaga.codeaction').code_action()<CR>
 vnoremap <silent> <Leader>ca <cmd>'<,'>lua require('lspsaga.codeaction').range_code_action()<CR>
 nnoremap <silent> <Leader>cr <cmd>lua require('lspsaga.rename').rename()<CR>
 nnoremap <silent> <Leader>cf <cmd>lua vim.lsp.buf.formatting()<CR>
 vnoremap <silent> <Leader>cfr <cmd>'<.'>lua vim.lsp.buf.range_formatting()<CR>
-nnoremap <silent> gD <cmd>lua require('lspsaga.hover').render_hover_doc()<CR>
+" nnoremap <silent> gD <cmd>lua require('lspsaga.hover').render_hover_doc()<CR>
 nnoremap <silent> <C-k> <cmd>lua require('lspsaga.signaturehelp').signature_help()<CR>
 nnoremap <silent> [d <cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_prev()<CR>
 nnoremap <silent> ]d <cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_next()<CR>
