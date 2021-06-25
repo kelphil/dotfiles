@@ -51,7 +51,7 @@ inoremap <expr> <Right> pumvisible() ? "<C-y>" :"<Right>"
 inoremap <expr> <CR> pumvisible() ? "<C-y>" :"<CR>"
 
 " Cancel the complete menu item like CTRL+e would
-inoremap <expr> <Left> pumvisible() ? "<C-e>" :"<Left>"
+" inoremap <expr> <Left> pumvisible() ? "<C-e>" :"<Left>"
 
 " Set to auto read when a file is changed from the outside
 set autoread
@@ -600,9 +600,13 @@ let g:ale_fixers = {
 \   'python': ['black'],
 \   'javascript': ['eslint'],
 \}
-" Set this variable to 1 to fix files when you save them.
+let g:ale_sign_error = '●'
+let g:ale_sign_warning = '.'
+let g:ale_lint_on_enter = 0
+let g:ale_lint_on_save = 1
 let g:ale_fix_on_save = 1
 
+nmap <silent> <C-e> <Plug>(ale_next_wrap)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Airline Extensions

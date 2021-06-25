@@ -20,10 +20,10 @@ source ~/.vimrc
 "--------------------------------------------------------------
 " Language Server Plugins
 "--------------------------------------------------------------
-lua << EOF
-require'lspconfig'.pyright.setup{}
-require'lspconfig'.bashls.setup{}
-EOF
+"lua << EOF
+"require'lspconfig'.pyright.setup{}
+"require'lspconfig'.bashls.setup{}
+"EOF
 "
 "--------------------------------------------------------------
 " Compe setup
@@ -126,10 +126,10 @@ local on_attach = function(client, bufnr)
 end
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { "pyright", "tsserver" }
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup { on_attach = on_attach }
-end
+-- local servers = { "pyright", "tsserver" }
+-- for _, lsp in ipairs(servers) do
+-- nvim_lsp[lsp].setup { on_attach = on_attach }
+-- end
 EOF
 "
 "--------------------------------------------------------------
