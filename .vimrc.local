@@ -405,6 +405,11 @@ endfunction
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Remap semicolon to colon
+nnoremap ; :
+nnoremap : ;
+vnoremap ; :
+vnoremap : ;
 nnoremap <leader>bb :Buffers<CR>
 " Go to next quickfix list item
 nnoremap <silent> <M-q> :cnext<CR>
