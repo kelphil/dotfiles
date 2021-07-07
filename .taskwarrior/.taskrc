@@ -181,7 +181,7 @@ report.all.sort=due+,urgency-,tags-
 
 report.next.description=Urgent (quadrant 1) + scheduled (quadrant 2) tasks
 #report.next.filter=(end: +frog) or status:pending (+OVERDUE or +DUE or +weekly or (-idea -goal (+ACTIVE or (+SCHEDULED +READY))))
-report.next.filter=status.not:Completed and status.not:Deleted and status.not:Waiting
+report.next.filter=status.not:Completed and status.not:Deleted and status.not:Waiting and status.not:Recurring
 report.next.sort=due+,urgency-,tags-
 report.next.columns=start.active,id,status,impact,workload,priority,joy,depends.indicator,project,due.relative,wait.remaining,description.count,start.age,urgency
 report.next.labels=A,ID,Status,I,W,P,J,D,Project,Due,Wait,Description,Active,Urg
@@ -280,7 +280,7 @@ uda.taskwarrior-tui.selection.bold=yes
 uda.taskwarrior-tui.selection.italic=yes
 uda.taskwarrior-tui.selection.dim=no
 uda.taskwarrior-tui.selection.blink=no
-uda.taskwarrior-tui.task-report.next.filter=status.not:Completed and status.not:Deleted and status.not:Waiting
+uda.taskwarrior-tui.task-report.next.filter=status.not:Completed and status.not:Deleted and status.not:Waiting and status.not:Recurring
 
 #+-----------------------------
 # Contexts
