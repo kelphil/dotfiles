@@ -60,6 +60,7 @@ set autoread
 " Fast saving
 nmap <leader>w ;w!<cr>
 nmap <leader>x ;wq!<cr>
+nmap <leader>q ;q!<cr>
 
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
