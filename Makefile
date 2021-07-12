@@ -11,8 +11,6 @@ merge_upstream_master: fetch_upstream_master
 	@echo "INFO :: Merge Upstream Master Branch"
 	@git merge $(UPSTREAM)/$(MASTER_BRANCH) $(MASTER_BRANCH)
 
-sync_upstream: merge_upstream_master
-
 update_master:
 	@echo "INFO :: Update Master Branch"
 	@git checkout $(MASTER_BRANCH)
@@ -23,6 +21,14 @@ rebase_dev: update_master
 	@git checkout $(CURRENT_BRANCH)
 	@git rebase $(MASTER_BRANCH)
 
+#+----------------------------------------------------------------
+# Workflow to keep user-fork in sync with upstream-master
+#+----------------------------------------------------------------
+sync_upstream: merge_upstream_master
+
+#+----------------------------------------------------------------
+# Workflow to keep dev-branch in sync with master-branch
+#+----------------------------------------------------------------
 rebase_master: rebase_dev
 	@echo "INFO :: Running Master Rebase Workflow"
 	@git checkout $(MASTER_BRANCH)
