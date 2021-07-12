@@ -1,6 +1,17 @@
+UPSTREAM = upstream
 MASTER_BRANCH = master
 CURRENT_BRANCH := $(shell git rev-parse --abbrev-ref HEAD)
 HASH := $(shell git rev-parse HEAD)
+
+fetch_upstream_master:
+	@echo "INFO :: Fetch Upstream Master Branch"
+	@git fetch $(UPSTREAM) $(MASTER_BRANCH)
+
+merge_upstream_master: fetch_upstream_master
+	@echo "INFO :: Merge Upstream Master Branch"
+	@git merge $(UPSTREAM)/$(MASTER_BRANCH) $(MASTER_BRANCH)
+
+sync_upstream: merge_upstream_master
 
 update_master:
 	@echo "INFO :: Update Master Branch"
